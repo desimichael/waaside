@@ -5,10 +5,10 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "73395ff2-eb33-4d5c-9b23-c348b5d379ae": {
+        "40b11070-70f1-48ba-8b7b-2ef3e1649a85": {
           "type": "announcement",
           "settings": {
-            "text": "50% OFF ST. PATTY'S DAY",
+            "text": "Welcome to our store",
             "text_alignment": "center",
             "color_scheme": "accent-1",
             "link": ""
@@ -16,7 +16,7 @@
         }
       },
       "block_order": [
-        "73395ff2-eb33-4d5c-9b23-c348b5d379ae"
+        "40b11070-70f1-48ba-8b7b-2ef3e1649a85"
       ],
       "custom_css": [
 
