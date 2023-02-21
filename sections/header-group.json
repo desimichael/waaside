@@ -5,29 +5,34 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement-bar-0": {
+        "73395ff2-eb33-4d5c-9b23-c348b5d379ae": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "50% OFF ST. PATTY'S DAY",
             "text_alignment": "center",
-            "color_scheme": "background-1",
+            "color_scheme": "accent-1",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
-      ]
+        "73395ff2-eb33-4d5c-9b23-c348b5d379ae"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+      }
     },
     "header": {
       "type": "header",
       "settings": {
-        "color_scheme": "background-1",
         "logo_position": "middle-left",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
+        "color_scheme": "background-1",
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 20,
