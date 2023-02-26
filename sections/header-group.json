@@ -9,8 +9,9 @@
           "type": "announcement",
           "settings": {
             "text": "Welcome to our store",
+            "background": "linear-gradient(#ffffff, #000000)",
+            "body_text": "#f8f8ff",
             "text_alignment": "center",
-            "color_scheme": "accent-1",
             "link": ""
           }
         }
@@ -28,7 +29,7 @@
       "type": "header",
       "settings": {
         "logo_position": "middle-left",
-        "menu": "main-menu",
+        "menu": "main-menu-2",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
