@@ -859,14 +859,21 @@ table {
 	}
 }
 .announce-bar {
-	padding: 15px;
+	padding: 15px 25px;
 	background: #001219;
+  margin: 0;
+}
+.announce-bar__link { 
+	text-decoration: none;
+}
+.announce-bar__message {
+  padding: 0;
+  margin: 0;
 }
 .announce-bar__text {
 	color: #f8f8ff;
 	font-size: 1.5rem;
 	font-weight: 700;
-	text-decoration: none;
 	transition: all 0.2s ease-in-out;
 }
 .announce-bar__text:hover {
