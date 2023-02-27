@@ -142,14 +142,19 @@ table {
 	display: none;
 }
 .header1__logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header1__logo a {
+	text-transform: uppercase;
 	font-family: Poiret One, cursive;
 	font-size: 2rem;
-	text-decoration: none;
 	color: #100c08;
-	text-transform: uppercase;
-	padding: 0;
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
 }
-.header1__logo:hover {
+.header1__logo a:hover {
 	color: #100c08;
 }
 .header1__collections-nav {
@@ -374,8 +379,8 @@ table {
 	}
 }
 .header2 {
-	height: 75px;
-	padding: 0 25px;
+	height: 100px;
+	padding: 25px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -387,15 +392,20 @@ table {
 	display: none;
 }
 .header2__logo {
-	font-family: Poiret One, cursive;
-	font-size: 2rem;
-	text-decoration: none;
-	color: #100c08;
 	display: flex;
 	justify-content: center;
-	text-transform: uppercase;
+	align-items: center;
 }
-.header2__logo:hover {
+.header2__logo-link {
+	text-transform: uppercase;
+	font-family: Poiret One, cursive;
+	font-size: 2rem;
+	color: #100c08;
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+}
+.header2__logo-link:hover {
 	color: #100c08;
 }
 .header2__collections-nav {
@@ -633,15 +643,19 @@ table {
 	display: none;
 }
 .header3__logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.header3__logo a {
+	text-transform: uppercase;
 	font-family: Poiret One, cursive;
 	font-size: 2rem;
-	text-decoration: none;
 	color: #100c08;
-	display: inline-block;
-	padding: 0;
-	text-transform: uppercase;
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
 }
-.header3__logo:hover {
+.header3__logo a:hover {
 	color: #100c08;
 }
 .header3__collections-nav {
@@ -859,16 +873,14 @@ table {
 	}
 }
 .announce-bar {
-	padding: 15px 25px;
+	padding: 15px;
 	background: #001219;
-  margin: 0;
 }
-.announce-bar__link { 
+.announce-bar__link {
 	text-decoration: none;
 }
 .announce-bar__message {
-  padding: 0;
-  margin: 0;
+	margin: 0;
 }
 .announce-bar__text {
 	color: #f8f8ff;
