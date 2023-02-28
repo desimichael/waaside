@@ -129,7 +129,7 @@ table {
 }
 .header1 {
 	font-family: Lato, sans-serif;
-	height: 75px;
+	height: 100px;
 	padding: 0 25px;
 	display: flex;
 	align-items: center;
@@ -210,7 +210,7 @@ table {
 	background: #f8f8ff;
 	opacity: 0;
 	visibility: hidden;
-	padding: 10px 10px 0;
+	padding: 10px;
 	min-width: 200px;
 	top: 35px;
 	z-index: 15;
@@ -223,15 +223,19 @@ table {
 }
 .header1 .collection-sublinks li a {
 	color: #100c08;
+	background: #fff;
 	text-transform: uppercase;
 	text-decoration: none;
 	font-weight: 300;
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	padding: 7px;
 	display: block;
 }
 .header1 .collection-sublinks li a:hover {
 	color: #cc553e;
+}
+.header1 .collection-sublinks li:last-child {
+	margin-bottom: 0;
 }
 .header1__user-link {
 	display: block;
@@ -379,8 +383,8 @@ table {
 	}
 }
 .header2 {
-	height: 100px;
-	padding: 25px;
+	height: 75px;
+	padding: 0 25px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -460,7 +464,7 @@ table {
 	background: #f8f8ff;
 	opacity: 0;
 	visibility: hidden;
-	padding: 10px 10px 0;
+	padding: 10px;
 	min-width: 200px;
 	top: 35px;
 	z-index: 15;
@@ -473,15 +477,19 @@ table {
 }
 .header2 .collection-sublinks li a {
 	color: #100c08;
+	background: #fff;
 	text-transform: uppercase;
 	text-decoration: none;
 	font-weight: 300;
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	padding: 7px;
 	display: block;
 }
 .header2 .collection-sublinks li a:hover {
 	color: #cc553e;
+}
+.header2 .collection-sublinks li:last-child {
+	margin-bottom: 0;
 }
 .header2__user-link {
 	display: block;
@@ -704,7 +712,7 @@ table {
 	background: #f8f8ff;
 	opacity: 0;
 	visibility: hidden;
-	padding: 10px 10px 0;
+	padding: 10px;
 	min-width: 200px;
 	top: 35px;
 	z-index: 15;
@@ -717,15 +725,19 @@ table {
 }
 .header3 .collection-sublinks li a {
 	color: #100c08;
+	background: #fff;
 	text-transform: uppercase;
 	text-decoration: none;
 	font-weight: 300;
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	padding: 7px;
 	display: block;
 }
 .header3 .collection-sublinks li a:hover {
 	color: #cc553e;
+}
+.header3 .collection-sublinks li:last-child {
+	margin-bottom: 0;
 }
 .header3__user-link {
 	display: block;
@@ -876,16 +888,11 @@ table {
 	padding: 15px;
 	background: #001219;
 }
-.announce-bar__link {
-	text-decoration: none;
-}
-.announce-bar__message {
-	margin: 0;
-}
 .announce-bar__text {
 	color: #f8f8ff;
 	font-size: 1.5rem;
 	font-weight: 700;
+	text-decoration: none;
 	transition: all 0.2s ease-in-out;
 }
 .announce-bar__text:hover {
