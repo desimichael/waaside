@@ -3,6 +3,7 @@
 {% when 'header1' %}
 <!-- Header 1 Start -->
 <header class="header header1">
+  <!-- header 1 logo start -->
   {%- if section.settings.menu != blank -%}
   <div class="header1__logo">
     <a class="header1__logo-link" href="{{ routes.root_url }}">
@@ -26,8 +27,9 @@
     </a>
   </div>
   {% endif %}
+  <!-- header 1 logo end -->
 
-  <!-- Middle Nav Start -->
+  <!-- header 1 middle nav start -->
   {%- if section.settings.menu != blank -%}
   <ul class="header1__collections-nav header1__collections-nav--left">
     {% for link in section.settings.menu.links %}
@@ -57,16 +59,16 @@
     {% endfor %}
   </ul>
   {% endif %}
-  <!-- Middle Nav End -->
+  <!-- header 1 middle nav end -->
 
-  <!-- Right Nav Start -->
+  <!-- header 1 right nav start -->
   <ul class="header1__collections-nav header1__collections-nav--right">
-    {%- if shop.customer_accounts_enabled -%}
     <li class="header1__user-link">
       <a href="#" class="header1__user-link-icon">
         <i class="fa-solid fa-magnifying-glass"></i>
       </a>
     </li>
+    {%- if shop.customer_accounts_enabled -%}
     <li class="header1__user-link">
       <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
         class="header1__user-link-icon">
@@ -80,31 +82,49 @@
       </a>
     </li>
   </ul>
-  <!-- Right Nav End -->
+  <!-- header 1 right nav end -->
 
+  <!-- header 1 mobile start -->
   <div class="header1__mobile-menu"><a class="header1__mobile-logo"
-      href="#">Waaside</a>
+      href="{{ routes.root_url }}">
+      {%- if section.settings.logo != blank -%}
+      {%- assign logo_alt = section.settings.logo.alt | default: shop.name |
+      escape -%}
+      {%- assign logo_height = section.settings.logo_width | divided_by:
+      section.settings.logo.aspect_ratio -%}
+      {{ section.settings.logo
+          | image_url: width: 500
+          | image_tag:
+            class: 'header1__logo-link',
+            widths: '50, 100, 150, 200, 250, 300, 400, 500',
+            height: logo_height,
+            width: section.settings.logo_width,
+            alt: logo_alt
+        }}
+      {%- else -%}
+      {{ shop.name }}
+      {%- endif -%}
+    </a>
     <div class="header1__mobile-open"><i class="fa-solid fa-bars"></i></div>
     <div class="header1__mobile-nav-left">
       <ul class="header1__mobile-nav-content">
-        <li class="header1__mobile-nav-header"><a href="#"
-            class="header1__mobile-close"><i class="fa-solid fa-xmark"></i></a>
+        <li class="header1__mobile-nav-header">
+          <div class="header3__mobile-close">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
         </li>
-        <li class="header1__mobile-item"><a href="#">accessories</a></li>
-        <li class="header1__mobile-item"><a href="#">collections</a></li>
+        <li class="header1__mobile-link"><a href="#">accessories</a></li>
+        <li class="header1__mobile-link"><a href="#">collections</a></li>
         <div class="header1__mobile-user-group">
-          <div class="header1__mobile-user-link"><a href="#"
-              class="header1__mobile-user-link-icon"><i
-                class="fa-solid fa-lock"></i><span>sign in</span></a></div>
-          <div class="header1__mobile-user-link"><a href="#"
-              class="header1__mobile-user-link-icon"><i
-                class="fa-solid fa-user"></i><span>register</span></a></div>
-          <div class="header1__mobile-user-link"><a href="#"
-              class="header1__mobile-user-link-icon"><i
-                class="fa-regular fa-heart"></i><span>wishlist</span></a></div>
-          <div class="header1__mobile-user-link"><a href="#"
-              class="header1__mobile-user-link-icon"><i
-                class="fa-solid fa-scale-balanced"></i><span>compare</span></a>
+          <div class="header1__mobile-user-link">
+            <a href="#" class="header1__mobile-user-link-icon"><i
+                class="fa-solid fa-lock"></i><span>sign in</span></a>
+          </div>
+          <div class="header1__mobile-user-link">
+            <a href="#" class="header1__mobile-user-link-icon">
+              <i class="fa-solid fa-user"></i>
+              <span>register</span>
+            </a>
           </div>
           <div class="header1__mobile-user-link"><a href="#"
               class="header1__mobile-user-link-icon"><i
@@ -114,6 +134,7 @@
       </ul>
     </div>
   </div>
+  <!-- header 1 mobile end -->
 </header>
 <!-- Header 1 End -->
 
@@ -161,15 +182,15 @@
       {%- assign logo_height = section.settings.logo_width | divided_by:
       section.settings.logo.aspect_ratio -%}
       {{
-                section.settings.logo
-                | image_url: width: 500
-                | image_tag:
-                  class: 'header2__logo-link',
-                  widths: '50, 100, 150, 200, 250, 300, 400, 500',
-                  height: logo_height,
-                  width: section.settings.logo_width,
-                  alt: logo_alt
-              }}
+        section.settings.logo
+        | image_url: width: 500
+        | image_tag:
+          class: 'header2__logo-link',
+          widths: '50, 100, 150, 200, 250, 300, 400, 500',
+          height: logo_height,
+          width: section.settings.logo_width,
+          alt: logo_alt
+      }}
       {%- else -%}
       {{ shop.name }}
       {%- endif -%}
@@ -201,15 +222,37 @@
   <!-- Right Nav End -->
 
   <div class="header2__mobile-menu">
-    <a class="header2__mobile-logo" href="#">Waaside</a>
+    <a class="header2__mobile-logo" href="{{ routes.root_url }}">
+      {%- if section.settings.logo != blank -%}
+      {%- assign logo_alt = section.settings.logo.alt | default: shop.name |
+      escape -%}
+      {%- assign logo_height = section.settings.logo_width | divided_by:
+      section.settings.logo.aspect_ratio -%}
+      {{
+        section.settings.logo
+        | image_url: width: 500
+        | image_tag:
+          class: 'header2__logo-link',
+          widths: '50, 100, 150, 200, 250, 300, 400, 500',
+          height: logo_height,
+          width: section.settings.logo_width,
+          alt: logo_alt
+      }}
+      {%- else -%}
+      {{ shop.name }}
+      {%- endif -%}
+    </a>
+
+    <!-- Mobile Start -->
     <div class="header2__mobile-open">
       <i class="fa-solid fa-bars"></i>
     </div>
     <div class="header2__mobile-nav-left">
       <ul class="header2__mobile-nav-content">
         <li class="header2__mobile-nav-header">
-          <a href="#" class="header2__mobile-close"><i
-              class="fa-solid fa-xmark"></i></a>
+          <div class="header3__mobile-close">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
         </li>
         <li class="header2__mobile-item">
           <a href="#">accessories</a>
@@ -218,29 +261,27 @@
           <a href="#">collections</a>
         </li>
         <div class="header2__mobile-user-group">
+          {%- if shop.customer_accounts_enabled -%}
           <div class="header2__mobile-user-link">
-            <a href="#" class="header2__mobile-user-link-icon"><i
+            <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+              class="header2__mobile-user-link-icon"><i
                 class="fa-solid fa-lock"></i><span>sign in</span></a>
           </div>
           <div class="header2__mobile-user-link">
-            <a href="#" class="header2__mobile-user-link-icon"><i
+            <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+              class="header2__mobile-user-link-icon"><i
                 class="fa-solid fa-user"></i><span>register</span></a>
           </div>
           <div class="header2__mobile-user-link">
-            <a href="#" class="header2__mobile-user-link-icon"><i
-                class="fa-regular fa-heart"></i><span>wishlist</span></a>
-          </div>
-          <div class="header2__mobile-user-link">
-            <a href="#" class="header2__mobile-user-link-icon"><i
-                class="fa-solid fa-scale-balanced"></i><span>compare</span></a>
-          </div>
-          <div class="header2__mobile-user-link">
-            <a href="#" class="header2__mobile-user-link-icon"><i
+            <a href="{{ routes.cart_url }}"
+              class="header2__mobile-user-link-icon"><i
                 class="fa-solid fa-basket-shopping"></i><span>cart</span></a>
           </div>
+          {% endif %}
         </div>
       </ul>
     </div>
+    <!-- Mobile End -->
   </div>
 </header>
 <!-- Header 2 End -->

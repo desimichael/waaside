@@ -129,7 +129,7 @@ table {
 }
 .header1 {
 	font-family: Lato, sans-serif;
-	height: 100px;
+	height: 75px;
 	padding: 0 25px;
 	display: flex;
 	align-items: center;
@@ -268,6 +268,10 @@ table {
 		padding: 0;
 		display: block;
 		line-height: 1;
+		transition: all 0.2s ease-in-out;
+	}
+	.header1__mobile-logo:hover {
+		color: #100c08;
 	}
 	.header1__collections-nav {
 		display: none;
@@ -283,9 +287,11 @@ table {
 		justify-content: center;
 		align-items: center;
 		padding: 10px;
-		font-size: 1.5rem;
 		color: #000;
 		cursor: pointer;
+	}
+	.header1__mobile-open i {
+		font-size: 1.5rem;
 	}
 	.header1__mobile-nav-left {
 		display: none;
@@ -315,7 +321,6 @@ table {
 		border-bottom: 1px solid #e2e1df;
 	}
 	.header1__mobile-close {
-		font-size: 1.5rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -323,6 +328,10 @@ table {
 		color: #100c08;
 		text-decoration: none;
 		transition: all 0.2s ease-in-out;
+		cursor: pointer;
+	}
+	.header1__mobile-close i {
+		font-size: 1.5rem;
 	}
 	.header1__mobile-close:hover {
 		color: #cc553e;
@@ -352,7 +361,7 @@ table {
 	.header1__mobile-user-link-icon:hover {
 		color: #cc553e;
 	}
-	.header1__mobile-item {
+	.header1__mobile-link {
 		display: flex;
 		align-items: center;
 		padding-left: 10px;
@@ -360,15 +369,15 @@ table {
 		z-index: 25;
 		transition: all 0.2s ease-in-out;
 	}
-	.header1__mobile-item a {
-		font-size: 0.7rem;
+	.header1__mobile-link a {
+		font-size: 0.9rem;
 		font-weight: 300;
 		color: #100c08;
 		display: block;
 		text-decoration: none;
 		text-transform: uppercase;
 	}
-	.header1__mobile-item a:hover {
+	.header1__mobile-link a:hover {
 		color: #cc553e;
 	}
 }
@@ -522,6 +531,10 @@ table {
 		padding: 0;
 		display: block;
 		line-height: 1;
+		transition: all 0.2s ease-in-out;
+	}
+	.header2__mobile-logo:hover {
+		color: #100c08;
 	}
 	.header2__collections-nav {
 		display: none;
@@ -540,6 +553,9 @@ table {
 		font-size: 1.5rem;
 		color: #000;
 		cursor: pointer;
+	}
+	.header2__mobile-open i {
+		font-size: 1.5rem;
 	}
 	.header2__mobile-nav-left {
 		display: none;
@@ -569,7 +585,6 @@ table {
 		border-bottom: 1px solid #e2e1df;
 	}
 	.header2__mobile-close {
-		font-size: 1.5rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -577,6 +592,10 @@ table {
 		color: #100c08;
 		text-decoration: none;
 		transition: all 0.2s ease-in-out;
+		cursor: pointer;
+	}
+	.header2__mobile-close i {
+		font-size: 1.5rem;
 	}
 	.header2__mobile-close:hover {
 		color: #cc553e;
@@ -606,7 +625,7 @@ table {
 	.header2__mobile-user-link-icon:hover {
 		color: #cc553e;
 	}
-	.header2__mobile-item {
+	.header2__mobile-link {
 		display: flex;
 		align-items: center;
 		padding-left: 10px;
@@ -614,15 +633,15 @@ table {
 		z-index: 25;
 		transition: all 0.2s ease-in-out;
 	}
-	.header2__mobile-item a {
-		font-size: 0.7rem;
+	.header2__mobile-link a {
+		font-size: 0.9rem;
 		font-weight: 300;
 		color: #100c08;
 		display: block;
 		text-decoration: none;
 		text-transform: uppercase;
 	}
-	.header2__mobile-item a:hover {
+	.header2__mobile-link a:hover {
 		color: #cc553e;
 	}
 }
@@ -770,6 +789,10 @@ table {
 		padding: 0;
 		display: block;
 		line-height: 1;
+		transition: all 0.2s ease-in-out;
+	}
+	.header3__mobile-logo:hover {
+		color: #100c08;
 	}
 	.header3__collections-nav {
 		display: none;
@@ -788,6 +811,9 @@ table {
 		font-size: 1.5rem;
 		color: #000;
 		cursor: pointer;
+	}
+	.header3__mobile-open i {
+		font-size: 1.5rem;
 	}
 	.header3__mobile-nav-left {
 		display: none;
@@ -825,6 +851,10 @@ table {
 		color: #100c08;
 		text-decoration: none;
 		transition: all 0.2s ease-in-out;
+		cursor: pointer;
+	}
+	.header3__mobile-close i {
+		font-size: 1.5rem;
 	}
 	.header3__mobile-close:hover {
 		color: #cc553e;
@@ -854,7 +884,7 @@ table {
 	.header3__mobile-user-link-icon:hover {
 		color: #cc553e;
 	}
-	.header3__mobile-item {
+	.header3__mobile-link {
 		display: flex;
 		align-items: center;
 		padding-left: 10px;
@@ -862,15 +892,15 @@ table {
 		z-index: 25;
 		transition: all 0.2s ease-in-out;
 	}
-	.header3__mobile-item a {
-		font-size: 0.8rem;
+	.header3__mobile-link a {
+		font-size: 0.9rem;
 		font-weight: 300;
 		color: #100c08;
 		display: block;
 		text-decoration: none;
 		text-transform: uppercase;
 	}
-	.header3__mobile-item a:hover {
+	.header3__mobile-link a:hover {
 		color: #cc553e;
 	}
 }
