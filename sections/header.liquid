@@ -1,37 +1,37 @@
 {% case section.settings.header_type %}
-
 {% when 'header1' %}
 <!-- Header 1 Start -->
 <header class="header header1">
   <!-- header 1 logo start -->
-  {%- if section.settings.menu != blank -%}
   <div class="header1__logo">
+    {%- if section.settings.menu != blank -%}
     <a class="header1__logo-link" href="{{ routes.root_url }}">
       {%- if section.settings.logo != blank -%}
       {%- assign logo_alt = section.settings.logo.alt | default: shop.name |
       escape -%}
       {%- assign logo_height = section.settings.logo_width | divided_by:
       section.settings.logo.aspect_ratio -%}
-      {{ section.settings.logo
-          | image_url: width: 500
-          | image_tag:
-            class: 'header1__logo-link',
-            widths: '50, 100, 150, 200, 250, 300, 400, 500',
-            height: logo_height,
-            width: section.settings.logo_width,
-            alt: logo_alt
-        }}
+      {{
+                section.settings.logo
+                | image_url: width: 500
+                | image_tag:
+                  class: 'header1__logo-link',
+                  widths: '50, 100, 150, 200, 250, 300, 400, 500',
+                  height: logo_height,
+                  width: section.settings.logo_width,
+                  alt: logo_alt
+              }}
       {%- else -%}
       {{ shop.name }}
       {%- endif -%}
     </a>
+    {% endif %}
   </div>
-  {% endif %}
   <!-- header 1 logo end -->
 
   <!-- header 1 middle nav start -->
-  {%- if section.settings.menu != blank -%}
-  <ul class="header1__collections-nav header1__collections-nav--left">
+  <ul class="header1__collections-nav">
+    {%- if section.settings.menu != blank -%}
     {% for link in section.settings.menu.links %}
     {%- if link.links == blank -%}
     <li class="header1__collection-link">
@@ -57,8 +57,8 @@
     </li>
     {% endif %}
     {% endfor %}
+    {% endif %}
   </ul>
-  {% endif %}
   <!-- header 1 middle nav end -->
 
   <!-- header 1 right nav start -->
@@ -68,14 +68,14 @@
         <i class="fa-solid fa-magnifying-glass"></i>
       </a>
     </li>
-    {%- if shop.customer_accounts_enabled -%}
     <li class="header1__user-link">
+      {%- if shop.customer_accounts_enabled -%}
       <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
         class="header1__user-link-icon">
         <i class="fa-solid fa-user"></i>
       </a>
+      {% endif %}
     </li>
-    {% endif %}
     <li class="header1__user-link">
       <a href="{{ routes.cart_url }}" class="header1__user-link-icon">
         <i class="fa-solid fa-basket-shopping"></i>
@@ -85,22 +85,23 @@
   <!-- header 1 right nav end -->
 
   <!-- header 1 mobile start -->
-  <div class="header1__mobile-menu"><a class="header1__mobile-logo"
-      href="{{ routes.root_url }}">
+  <div class="header1__mobile-menu">
+    <a class="header1__mobile-logo" href="{{ routes.root_url }}">
       {%- if section.settings.logo != blank -%}
       {%- assign logo_alt = section.settings.logo.alt | default: shop.name |
       escape -%}
       {%- assign logo_height = section.settings.logo_width | divided_by:
       section.settings.logo.aspect_ratio -%}
-      {{ section.settings.logo
-          | image_url: width: 500
-          | image_tag:
-            class: 'header1__logo-link',
-            widths: '50, 100, 150, 200, 250, 300, 400, 500',
-            height: logo_height,
-            width: section.settings.logo_width,
-            alt: logo_alt
-        }}
+      {{
+              section.settings.logo
+              | image_url: width: 500
+              | image_tag:
+                class: 'header1__logo-link',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500',
+                height: logo_height,
+                width: section.settings.logo_width,
+                alt: logo_alt
+            }}
       {%- else -%}
       {{ shop.name }}
       {%- endif -%}
@@ -126,8 +127,8 @@
               <span>register</span>
             </a>
           </div>
-          <div class="header1__mobile-user-link"><a href="#"
-              class="header1__mobile-user-link-icon"><i
+          <div class="header1__mobile-user-link">
+            <a href="#" class="header1__mobile-user-link-icon"><i
                 class="fa-solid fa-basket-shopping"></i><span>cart</span></a>
           </div>
         </div>
@@ -142,8 +143,8 @@
 <!-- Header 2 Start -->
 <header class="header header2 ">
   <!-- Left Nav Start -->
-  {%- if section.settings.menu != blank -%}
   <ul class="col-md-4 header2__collections-nav header2__collections-nav--left">
+    {%- if section.settings.menu != blank -%}
     {% for link in section.settings.menu.links %}
     {%- if link.links == blank -%}
     <li class="header2__collection-link">
@@ -169,12 +170,12 @@
     </li>
     {% endif %}
     {% endfor %}
+    {% endif %}
   </ul>
-  {% endif %}
   <!-- Left Nav End -->
 
-  {% if section.settings.header_type.logo != 'header2' %}
   <div class="col-md-2 header2__logo">
+    {% if section.settings.header_type.logo != 'header2' %}
     <a class="header2__logo-link" href="{{ routes.root_url }}">
       {%- if section.settings.logo != blank -%}
       {%- assign logo_alt = section.settings.logo.alt | default: shop.name |
@@ -195,24 +196,48 @@
       {{ shop.name }}
       {%- endif -%}
     </a>
+    {% endif %}
   </div>
-  {% endif %}
 
   <!-- Right Nav Start -->
   <ul class="col-md-4 header2__collections-nav header2__collections-nav--right">
-    {%- if shop.customer_accounts_enabled -%}
-    <li class="header2__user-link">
-      <a href="#" class="header2__user-link-icon">
-        <i class="fa-solid fa-magnifying-glass"></i>
+    <li class="header2__collection-link">
+      {%- if section.settings.menu_two != blank -%}
+      {% for link in section.settings.menu_two.links %}
+      {%- if link.links == blank -%}
+    <li class="header2__collection-link">
+      <a href="{{ link.url }}" class="header2__link">
+        {{- link.title | escape -}}
       </a>
     </li>
+    {% else %}
+    <li class="header2__collection-link header2__collection-link--dropdown">
+      <a href="{{ link.url }}" class="header2__link">
+        {{- link.title | escape -}}
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+      <ul class="collection-sublinks">
+        {% for childlink in link.links %}
+        <li>
+          <a href="{{ childlink.url }}">
+            {{- childlink.title | escape -}}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    </li>
     <li class="header2__user-link">
+      {%- if shop.customer_accounts_enabled -%}
       <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
         class="header2__user-link-icon">
         <i class="fa-solid fa-user"></i>
       </a>
+      {% endif %}
     </li>
-    {% endif %}
     <li class="header2__user-link">
       <a href="{{ routes.cart_url }}" class="header2__user-link-icon">
         <i class="fa-solid fa-basket-shopping"></i>
@@ -250,7 +275,7 @@
     <div class="header2__mobile-nav-left">
       <ul class="header2__mobile-nav-content">
         <li class="header2__mobile-nav-header">
-          <div class="header3__mobile-close">
+          <div class="header2__mobile-close">
             <i class="fa-solid fa-xmark"></i>
           </div>
         </li>
@@ -288,7 +313,113 @@
 
 {% when 'header3' %}
 <!-- Header 3 Start -->
-<h1>header 3</h1>
+<header class="header header3">
+  <div class="header3__logo">
+    {% if section.settings.header_type.logo != 'header3' %}
+    <a class="header3__logo-link" href="{{ routes.root_url }}">
+      {%- if section.settings.logo != blank -%}
+      {%- assign logo_alt = section.settings.logo.alt | default: shop.name |
+      escape -%}
+      {%- assign logo_height = section.settings.logo_width | divided_by:
+      section.settings.logo.aspect_ratio -%}
+      {{
+                section.settings.logo
+                | image_url: width: 500
+                | image_tag:
+                  class: 'header3__logo-link',
+                  widths: '50, 100, 150, 200, 250, 300, 400, 500',
+                  height: logo_height,
+                  width: section.settings.logo_width,
+                  alt: logo_alt
+              }}
+      {%- else -%}
+      {{ shop.name }}
+      {%- endif -%}
+    </a>
+    {% endif %}
+  </div>
+
+  <!-- header 3 right nav start -->
+  <ul class="header3__collections-nav header3__collections-nav--right">
+    {%- if section.settings.menu != blank -%}
+    {% for link in section.settings.menu.links %}
+    {%- if link.links == blank -%}
+    <li class="header3__collection-link">
+      <a href="{{ link.url }}" class="header1__link">
+        {{- link.title | escape -}}
+      </a>
+    </li>
+    {% else %}
+    <li class="header3__collection-link header1__collection-link--dropdown">
+      <a href="{{ link.url }}" class="header3__link">
+        {{- link.title | escape -}}
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+      <ul class="collection-sublinks">
+        {% for childlink in link.links %}
+        <li>
+          <a href="{{ childlink.url }}">
+            {{- childlink.title | escape -}}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </li>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    <li class="header3__user-link">
+      <a href="#" class="header3__user-link-icon"><i
+          class="fa-solid fa-magnifying-glass"></i></a>
+    </li>
+    <li class="header3__user-link">
+      {%- if shop.customer_accounts_enabled -%}
+      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+        class="header2__user-link-icon">
+        <i class="fa-solid fa-user"></i>
+      </a>
+      {% endif %}
+    </li>
+    <li class="header3__user-link">
+      <a href="{{ routes.cart_url }}" class="header3__user-link-icon">
+        <i class="fa-solid fa-basket-shopping"></i>
+      </a>
+    </li>
+  </ul>
+  <!-- header 3 right nav end -->
+
+  <!-- header 3 right mobile start -->
+  <div class="header3__mobile-menu">
+    <a class="header3__mobile-logo" href="#">Waaside</a>
+    <div class="header3__mobile-open"><i class="fa-solid fa-bars"></i></div>
+    <div class="header3__mobile-nav-left">
+      <ul class="header3__mobile-nav-content">
+        <li class="header3__mobile-nav-header">
+          <div class="header3__mobile-close"><i class="fa-solid fa-xmark"></i>
+          </div>
+        </li>
+        <li class="header3__mobile-link"><a href="#">accessories</a></li>
+        <li class="header3__mobile-link"><a href="#">collections</a></li>
+        <div class="header3__mobile-user-group">
+          <div class="header3__mobile-user-link">
+            <a href="#" class="header3__mobile-user-link-icon"><i
+                class="fa-solid fa-lock"></i><span>sign in</span></a>
+          </div>
+          <div class="header3__mobile-user-link">
+            <a href="#" class="header3__mobile-user-link-icon"><i
+                class="fa-solid fa-user"></i><span>register</span></a>
+          </div>
+          <div class="header3__mobile-user-link">
+            <a href="{{ routes.cart_url }}"
+              class="header3__mobile-user-link-icon"><i
+                class="fa-solid fa-basket-shopping"></i><span>cart</span></a>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <!-- header 3 right mobile end -->
+</header>
 <!-- Header 3 Start -->
 
 {% else %}
