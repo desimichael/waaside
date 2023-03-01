@@ -31,7 +31,7 @@
         "header_type": "header2",
         "logo_width": 100,
         "menu": "main-menu",
-        "menu_two": "main-menu",
+        "menu_two": "main-menu-2",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
