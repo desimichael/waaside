@@ -1,11 +1,11 @@
 [
   {
-    "name": "Gropiv",
-    "theme_name": "Waaside",
-    "theme_version": "8.0.0-rc",
-    "theme_author": "Gropiv LLC",
-    "theme_documentation_url": "https://growpiv.com",
-    "theme_support_url": "https://support/growpiv.com"
+    "name": "theme_info",
+    "theme_name": "Dawn",
+    "theme_version": "8.0.0",
+    "theme_author": "Shopify",
+    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+    "theme_support_url": "https://support.shopify.com/"
   },
   {
     "name": "t:settings_schema.logo.name",
