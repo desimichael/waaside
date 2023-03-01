@@ -114,23 +114,35 @@
             <i class="fa-solid fa-xmark"></i>
           </div>
         </li>
-        <li class="header1__mobile-link"><a href="#">accessories</a></li>
-        <li class="header1__mobile-link"><a href="#">collections</a></li>
+        {%- if section.settings.menu != blank -%}
+        {% for link in section.settings.menu.links %}
+        {%- if link.links == blank -%}
+          <li class="header1__mobile-link">
+            <a href="{{ link.url }}" class="header1__link">
+              {{- link.title | escape -}}
+            </a>
+          </li>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
         <div class="header1__mobile-user-group">
+          {%- if shop.customer_accounts_enabled -%}
           <div class="header1__mobile-user-link">
-            <a href="#" class="header1__mobile-user-link-icon"><i
+            <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+              class="header1__mobile-user-link-icon"><i
                 class="fa-solid fa-lock"></i><span>sign in</span></a>
           </div>
           <div class="header1__mobile-user-link">
-            <a href="#" class="header1__mobile-user-link-icon">
-              <i class="fa-solid fa-user"></i>
-              <span>register</span>
-            </a>
+            <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+              class="header1__mobile-user-link-icon"><i
+                class="fa-solid fa-user"></i><span>register</span></a>
           </div>
           <div class="header1__mobile-user-link">
-            <a href="#" class="header1__mobile-user-link-icon"><i
+            <a href="{{ routes.cart_url }}"
+              class="header1__mobile-user-link-icon"><i
                 class="fa-solid fa-basket-shopping"></i><span>cart</span></a>
           </div>
+          {% endif %}
         </div>
       </ul>
     </div>
@@ -279,12 +291,17 @@
             <i class="fa-solid fa-xmark"></i>
           </div>
         </li>
-        <li class="header2__mobile-item">
-          <a href="#">accessories</a>
-        </li>
-        <li class="header2__mobile-item">
-          <a href="#">collections</a>
-        </li>
+        {%- if section.settings.menu != blank -%}
+        {% for link in section.settings.menu.links %}
+        {%- if link.links == blank -%}
+          <li class="header2__mobile-link">
+            <a href="{{ link.url }}" class="header2__link">
+              {{- link.title | escape -}}
+            </a>
+          </li>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
         <div class="header2__mobile-user-group">
           {%- if shop.customer_accounts_enabled -%}
           <div class="header2__mobile-user-link">
@@ -293,7 +310,7 @@
                 class="fa-solid fa-lock"></i><span>sign in</span></a>
           </div>
           <div class="header2__mobile-user-link">
-            <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+            <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_register_url }}{%- endif -%}"
               class="header2__mobile-user-link-icon"><i
                 class="fa-solid fa-user"></i><span>register</span></a>
           </div>
