@@ -988,7 +988,7 @@ table {
 	background: rgba(0, 0, 0, 0.4);
 	display: flex;
 	align-items: center;
-	padding: 0 25px;
+	padding: 0 100px;
 	z-index: 2;
 }
 .hero1__info {
@@ -1002,6 +1002,27 @@ table {
 	line-height: 1;
 	letter-spacing: 1px;
 }
+.hero1__title--md {
+	font-family: Poiret One, cursive;
+	font-size: 4rem;
+	color: #fec89a;
+	line-height: 1;
+	letter-spacing: 1px;
+}
+.hero1__title--lg {
+	font-family: Poiret One, cursive;
+	font-size: 6rem;
+	color: #fec89a;
+	line-height: 1;
+	letter-spacing: 1px;
+}
+.hero1__title--xl {
+	font-family: Poiret One, cursive;
+	font-size: 8rem;
+	color: #fec89a;
+	line-height: 1;
+	letter-spacing: 1px;
+}
 .hero1__paragraph {
 	font-weight: 300;
 	font-size: 1.2rem;
@@ -1009,6 +1030,7 @@ table {
 	line-height: 1.5;
 	max-width: 60%;
 	padding: 5px 0 30px;
+	margin-bottom: 0;
 }
 .hero1__button {
 	font-family: Roboto, sans-serif;
@@ -2543,7 +2565,7 @@ table {
 }
 .footer1__content-top {
 	background: #f8f8f8;
-	padding-top: 25px 0;
+	padding-top: 25px;
 	border-top: 1px solid #e2e1df;
 	border-bottom: 1px solid #e2e1df;
 }

@@ -32,10 +32,31 @@
   {%- endif -%}
   <div class="hero1__content-container">
     <div class="hero1__info">
-      <div class="hero1__title">Waaside</div>
-      <p class="hero1__paragraph"><i>it shines, glitters,
-          reflects light</i></p><a href="#"
-        class="hero1__button"><span>Shop Now</span></a>
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            <h2 class="hero1__title--{{ block.settings.title_size }}">
+              {{ block.settings.title | escape }}
+            </h2>
+          {%- when 'paragraph' -%}
+            <p class="hero1__paragraph">
+              {{ block.settings.paragraph | escape }}
+            </p>
+          {%- when 'buttons' -%}
+            <div
+              class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
+              {{ block.shopify_attributes }}
+            >
+              {%- if block.settings.button_label != blank -%}
+                <a href="{{ block.settings.button_link }}" class="hero1__button" {{ block.shopify_attributes }}>
+                  <span>
+                    {{- block.settings.button_label | escape -}}
+                  </span> 
+                </a>
+              {%- endif -%}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}          
     </div>
   </div>
 </div>
@@ -202,18 +223,6 @@
       "label": "t:sections.image-banner.settings.image.label"
     },
     {
-      "type": "text",
-      "id": "hero_title",
-      "label": "Title",
-      "default": "Hero Title"
-    },
-    {
-      "type": "textarea",
-      "id": "hero_message",
-      "label": "Welcome message",
-      "default": "It shines, glitters, reflects light."
-    },
-    {
       "type": "select",
       "id": "info_alignment",
       "options": [
@@ -232,11 +241,6 @@
       ],
       "default": "center",
       "label": "Info text alignment"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button Link"
     },
     {
       "type": "image_picker",
@@ -262,42 +266,42 @@
       "settings": [
         {
           "type": "text",
-          "id": "heading",
-          "default": "Image banner",
-          "label": "t:sections.image-banner.blocks.heading.settings.heading.label"
+          "id": "title",
+          "label": "Title",
+          "default": "Title"
         },
         {
           "type": "select",
-          "id": "heading_size",
+          "id": "title_size",
           "options": [
             {
-              "value": "h2",
-              "label": "t:sections.all.heading_size.options__1.label"
+              "value": "md",
+              "label": "Medium"
             },
             {
-              "value": "h1",
-              "label": "t:sections.all.heading_size.options__2.label"
+              "value": "lg",
+              "label": "Large"
             },
             {
-              "value": "h0",
-              "label": "t:sections.all.heading_size.options__3.label"
+              "value": "xl",
+              "label": "Extra Large"
             }
           ],
-          "default": "h1",
-          "label": "t:sections.all.heading_size.label"
+          "default": "xl",
+          "label": "Extra Large"
         }
       ]
     },
     {
-      "type": "text",
-      "name": "t:sections.image-banner.blocks.text.name",
+      "type": "paragraph",
+      "name": "Paragraph",
       "limit": 1,
       "settings": [
         {
-          "type": "text",
-          "id": "text",
-          "default": "Give customers details about the banner image(s) or content on the template.",
-          "label": "t:sections.image-banner.blocks.text.settings.text.label"
+          "type": "textarea",
+          "id": "paragraph",
+          "label": "Welcome message",
+          "default": "It shines, glitters, reflects light."
         },
         {
           "type": "select",
@@ -328,15 +332,15 @@
       "settings": [
         {
           "type": "text",
-          "id": "button_label_1",
+          "id": "button_label",
           "default": "Button label",
           "label": "t:sections.image-banner.blocks.buttons.settings.button_label_1.label",
           "info": "t:sections.image-banner.blocks.buttons.settings.button_label_1.info"
         },
         {
           "type": "url",
-          "id": "button_link_1",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_link_1.label"
+          "id": "button_link",
+          "label": "Button Link"
         },
         {
           "type": "checkbox",
@@ -373,7 +377,7 @@
           "type": "heading"
         },
         {
-          "type": "text"
+          "type": "paragraph"
         },
         {
           "type": "buttons"
