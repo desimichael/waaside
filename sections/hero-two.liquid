@@ -65,7 +65,7 @@
 
 {% schema %}
 {
-  "name": "Hero One",
+  "name": "Hero Two",
   "tag": "section",
   "class": "section",
   "disabled_on": {
@@ -101,6 +101,11 @@
       "label": "Info text alignment"
     },
     {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "t:sections.image-banner.settings.image_2.label"
+    },
+    {
       "type": "color",
       "id": "background",
       "label": "Background color",
@@ -114,7 +119,7 @@
       "step": 10,
       "unit": "%",
       "label": "Background overlay opacity",
-      "default": 20
+      "default": 0
     }
   ],
   "blocks": [
@@ -230,7 +235,7 @@
   ],
   "presets": [
     {
-      "name": "Hero One",
+      "name": "Hero Two",
       "blocks": [
         {
           "type": "heading"
