@@ -1256,6 +1256,22 @@ table {
 	display: flex
 }
 
+.hero2--vh25 {
+	height: 25vh
+}
+
+.hero2--vh50 {
+	height: 50vh
+}
+
+.hero2--vh75 {
+	height: 75vh
+}
+
+.hero2--vh100 {
+	height: 100vh
+}
+
 .hero2 .hero2__collections1,
 .hero2 .hero2__collections2 {
 	position: relative;
@@ -1343,6 +1359,38 @@ table {
 	font-size: 3.5rem;
 	letter-spacing: 1px;
 	padding-bottom: 2rem
+}
+
+.hero2__title--sm {
+	font-size: 2rem
+}
+
+.hero2__title--md,
+.hero2__title--sm {
+	font-family: Poiret One, cursive;
+	color: #fec89a;
+	line-height: 1;
+	letter-spacing: 1px
+}
+
+.hero2__title--md {
+	font-size: 4rem
+}
+
+.hero2__title--lg {
+	font-size: 6rem
+}
+
+.hero2__title--lg,
+.hero2__title--xl {
+	font-family: Poiret One, cursive;
+	color: #fec89a;
+	line-height: 1;
+	letter-spacing: 1px
+}
+
+.hero2__title--xl {
+	font-size: 8rem
 }
 
 .hero2__paragraph {

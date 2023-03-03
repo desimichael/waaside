@@ -1,55 +1,52 @@
-
-<div class="hero hero1 hero1--aligned-{{ section.settings.info_alignment }}  ">
-  {% if section.settings.image != blank %}
-    {%- liquid
-        assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
-        if section.settings.image != blank
-          assign image_class = 'hero1__bg'
-        endif
-        if section.settings.image != blank
-          assign sizes = '(min-width: 750px) 50vw, 100vw'
-        elsif section.settings.image != blank
-          assign sizes = '50vw'
-        else
-          assign sizes = '100vw'
-        endif
-      -%}
-      {{
-        section.settings.image
-        | image_url: width: 3840
-        | image_tag:
-          loading: 'lazy',
-          width: section.settings.image.width,
-          height: image_height,
-          class: image_class,
-          sizes: sizes,
-          widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
-      }}
-  {%- elsif section.settings.image == blank -%}
+<div class="hero hero2 hero2--vh{{ section.settings.hero_height }}">
+  <!-- left image start -->
+  <div class="hero2__collections1 hero2__collections1--aligned-{{ section.settings.info_alignment }}">
+      {% if section.settings.image != blank %}
+      {%- liquid
+          assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
+          if section.settings.image != blank
+            assign image_class = 'hero2__bg'
+          endif
+          if section.settings.image != blank
+            assign sizes = '(min-width: 750px) 50vw, 100vw'
+          elsif section.settings.image != blank
+            assign sizes = '50vw'
+          else
+            assign sizes = '100vw'
+          endif
+        -%}
+        {{
+          section.settings.image
+          | image_url: width: 3840
+          | image_tag:
+            loading: 'lazy',
+            width: section.settings.image.width,
+            height: image_height,
+            class: image_class,
+            sizes: sizes,
+            widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+        }}
+      {%- elsif section.settings.image == blank -%}
     <div>
       {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
     </div>
   {%- endif -%}
   {% assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.00 %}
-  <div class="hero1__content-container" style="background-color: {{ section.settings.background | color_modify: 'alpha', overlay_opacity }}">
-    <div class="hero1__info">
-      {%- for block in section.blocks -%}
+    <div class="hero2__content-container" style="background-color: {{ section.settings.background | color_modify: 'alpha', overlay_opacity }}">
+      <div class="hero2__info">
+        {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
-            <h2 class="hero1__title--{{ block.settings.title_size }}">
+            <h2 class="hero2__title hero2__title--{{ block.settings.title_size }}">
               {{ block.settings.title | escape }}
             </h2>
-          {%- when 'paragraph' -%}
-            <p class="hero1__paragraph">
-              {{ block.settings.paragraph | escape }}
-            </p>
           {%- when 'buttons' -%}
             <div
               class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
               {{ block.shopify_attributes }}
             >
               {%- if block.settings.button_label != blank -%}
-                <a href="{{ block.settings.button_link }}" class="hero1__button" {{ block.shopify_attributes }}>
+                <a href="{{ block.settings.button_link }}" class="hero2__button" {{ block.shopify_attributes }}>
                   <span>
                     {{- block.settings.button_label | escape -}}
                   </span> 
@@ -57,9 +54,72 @@
               {%- endif -%}
             </div>
         {%- endcase -%}
-      {%- endfor -%}          
+        {%- endfor -%} 
+      </div>
     </div>
   </div>
+  <!-- left image end  -->
+
+  <!-- right image start  -->
+  <div class="hero2__collections2 hero2__collections2--aligned-{{ section.settings.info_alignment_2 }}">
+      {% if section.settings.image_2 != blank %}
+      {%- liquid
+          assign image_height = section.settings.image_2.width | divided_by: section.settings.image_2.aspect_ratio
+          if section.settings.image_2 != blank
+            assign image_class = 'hero2__bg'
+          endif
+          if section.settings.image_2 != blank
+            assign sizes = '(min-width: 750px) 50vw, 100vw'
+          elsif section.settings.image_2 != blank
+            assign sizes = '50vw'
+          else
+            assign sizes = '100vw'
+          endif
+        -%}
+        {{
+          section.settings.image_2
+          | image_url: width: 3840
+          | image_tag:
+            loading: 'lazy',
+            width: section.settings.image_2.width,
+            height: image_height,
+            class: image_class,
+            sizes: sizes,
+            widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+        }}
+      {%- elsif section.settings.image_2 == blank -%}
+    <div>
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+  {%- endif -%}
+  {% assign overlay_opacity = section.settings.overlay_opacity_2 | divided_by: 100.00 %}
+    <div class="hero2__content-container" style="background-color: {{ section.settings.background_2 | color_modify: 'alpha', overlay_opacity }}">
+      <div class="hero2__info">
+        {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            <h2 class="hero2__title hero2__title--{{ block.settings.title_size }}">
+              {{ block.settings.title_2 | escape }}
+            </h2>
+          {%- when 'buttons' -%}
+            <div
+              class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
+              {{ block.shopify_attributes }}
+            >
+              {%- if block.settings.button_label != blank -%}
+                <a href="{{ block.settings.button_link }}" class="hero2__button" {{ block.shopify_attributes }}>
+                  <span>
+                    {{- block.settings.button_label | escape -}}
+                  </span> 
+                </a>
+              {%- endif -%}
+            </div>
+        {%- endcase -%}
+        {%- endfor -%} 
+      </div>
+    </div>
+  </div>
+  <!-- right image end  -->
 </div>
 
 
@@ -75,6 +135,30 @@
     ]
   },
   "settings": [
+    {
+      "type": "select",
+      "id": "hero_height",
+      "options": [
+        {
+          "value": "25",
+          "label": "Height 25%"
+        },
+        {
+          "value": "50",
+          "label": "Height 50%"
+        },
+        {
+          "value": "75",
+          "label": "Height 75%"
+        },
+        {
+          "value": "100",
+          "label": "Height 100%"
+        }
+      ],
+      "default": "100",
+      "label": "Height 100%"
+    },
     {
       "type": "image_picker",
       "id": "image",
@@ -98,17 +182,12 @@
         }
       ],
       "default": "center",
-      "label": "Info text alignment"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_2",
-      "label": "t:sections.image-banner.settings.image_2.label"
+      "label": "Info text alignment 1"
     },
     {
       "type": "color",
       "id": "background",
-      "label": "Background color",
+      "label": "Background color 1",
       "default": "#000000"
     },
     {
@@ -119,7 +198,48 @@
       "step": 10,
       "unit": "%",
       "label": "Background overlay opacity",
-      "default": 0
+      "default": 20
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "t:sections.image-banner.settings.image_2.label"
+    },
+    {
+      "type": "select",
+      "id": "info_alignment_2",
+      "options": [
+        {
+          "value": "left",
+          "label": "Align left"
+        },
+        {
+          "value": "center",
+          "label": "Align center"
+        },
+        {
+          "value": "right",
+          "label": "Align right"
+        }
+      ],
+      "default": "center",
+      "label": "Info text alignment 2"
+    },
+    {
+      "type": "color",
+      "id": "background_2",
+      "label": "Background color 2",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity_2",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Background overlay opacity 2",
+      "default": 20
     }
   ],
   "blocks": [
@@ -131,13 +251,23 @@
         {
           "type": "text",
           "id": "title",
-          "label": "Title",
+          "label": "Title 1",
+          "default": "Title"
+        },
+        {
+          "type": "text",
+          "id": "title_2",
+          "label": "Title 2",
           "default": "Title"
         },
         {
           "type": "select",
           "id": "title_size",
           "options": [
+            {
+              "value": "sm",
+              "label": "Small"
+            },
             {
               "value": "md",
               "label": "Medium"
@@ -151,41 +281,8 @@
               "label": "Extra Large"
             }
           ],
-          "default": "xl",
-          "label": "Extra Large"
-        }
-      ]
-    },
-    {
-      "type": "paragraph",
-      "name": "Paragraph",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "textarea",
-          "id": "paragraph",
-          "label": "Welcome message",
-          "default": "It shines, glitters, reflects light."
-        },
-        {
-          "type": "select",
-          "id": "text_style",
-          "options": [
-            {
-              "value": "body",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__1.label"
-            },
-            {
-              "value": "subtitle",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__2.label"
-            },
-            {
-              "value": "caption-with-letter-spacing",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__3.label"
-            }
-          ],
-          "default": "body",
-          "label": "t:sections.image-banner.blocks.text.settings.text_style.label"
+          "default": "md",
+          "label": "Medium"
         }
       ]
     },
@@ -239,9 +336,6 @@
       "blocks": [
         {
           "type": "heading"
-        },
-        {
-          "type": "paragraph"
         },
         {
           "type": "buttons"
