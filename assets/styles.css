@@ -1092,7 +1092,6 @@ table {
 
 .hero1 {
 	position: relative;
-	height: calc(100vh - 100px);
 	width: 100%;
 	overflow: hidden;
 	margin-bottom: 50px
@@ -1179,52 +1178,54 @@ table {
 }
 
 .hero1__title {
-	font-size: 8rem
-}
-
-.hero1__title,
-.hero1__title--sm {
 	font-family: Poiret One, cursive;
 	color: #fec89a;
-	line-height: 1;
-	letter-spacing: 1px
+	font-size: 3.5rem;
+	letter-spacing: 1px;
+	padding-bottom: 1.5rem
 }
 
 .hero1__title--sm {
 	font-size: 2rem
 }
 
-.hero1__title--md {
-	font-size: 4rem
-}
-
-.hero1__title--lg,
-.hero1__title--md {
+.hero1__title--md,
+.hero1__title--sm {
 	font-family: Poiret One, cursive;
 	color: #fec89a;
 	line-height: 1;
-	letter-spacing: 1px
+	letter-spacing: 1px;
+	padding-bottom: 1.5rem
+}
+
+.hero1__title--md {
+	font-size: 4rem
 }
 
 .hero1__title--lg {
 	font-size: 6rem
 }
 
+.hero1__title--lg,
 .hero1__title--xl {
 	font-family: Poiret One, cursive;
 	color: #fec89a;
-	font-size: 8rem;
 	line-height: 1;
-	letter-spacing: 1px
+	letter-spacing: 1px;
+	padding-bottom: 1.5rem
+}
+
+.hero1__title--xl {
+	font-size: 8rem
 }
 
 .hero1__paragraph {
 	font-weight: 300;
 	font-size: 1.2rem;
 	color: #f8f8ff;
-	line-height: 1.5;
+	line-height: 2;
 	max-width: 60%;
-	padding: 5px 0 30px
+	padding-bottom: 1.5rem
 }
 
 .hero1__button {
@@ -1250,7 +1251,6 @@ table {
 
 .hero2 {
 	position: relative;
-	height: calc(100vh - 100px);
 	width: 100%;
 	overflow: hidden;
 	display: flex
@@ -1358,7 +1358,7 @@ table {
 	color: #fec89a;
 	font-size: 3.5rem;
 	letter-spacing: 1px;
-	padding-bottom: 2rem
+	padding-bottom: 1.5rem
 }
 
 .hero2__title--sm {
@@ -1370,7 +1370,8 @@ table {
 	font-family: Poiret One, cursive;
 	color: #fec89a;
 	line-height: 1;
-	letter-spacing: 1px
+	letter-spacing: 1px;
+	padding-bottom: 1.5rem
 }
 
 .hero2__title--md {
@@ -1386,7 +1387,8 @@ table {
 	font-family: Poiret One, cursive;
 	color: #fec89a;
 	line-height: 1;
-	letter-spacing: 1px
+	letter-spacing: 1px;
+	padding-bottom: 1.5rem
 }
 
 .hero2__title--xl {
@@ -1397,9 +1399,9 @@ table {
 	font-weight: 300;
 	font-size: 1rem;
 	color: #f8f8ff;
-	line-height: 1.5;
+	line-height: 2;
 	max-width: 50%;
-	padding: 5px 0 30px
+	padding-bottom: 1.5rem
 }
 
 .hero2__button {

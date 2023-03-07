@@ -44,19 +44,14 @@
             <p class="hero1__paragraph">
               {{ block.settings.paragraph | escape }}
             </p>
-          {%- when 'buttons' -%}
-            <div
-              class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
-              {{ block.shopify_attributes }}
-            >
-              {%- if block.settings.button_label != blank -%}
-                <a href="{{ block.settings.button_link }}" class="hero1__button" {{ block.shopify_attributes }}>
-                  <span>
-                    {{- block.settings.button_label | escape -}}
-                  </span> 
-                </a>
-              {%- endif -%}
-            </div>
+          {%- when 'button' -%}
+            {%- if block.settings.button_label != blank -%}
+              <a href="{{ block.settings.button_link }}" class="hero1__button" {{ block.shopify_attributes }}>
+                <span>
+                  {{- block.settings.button_label | escape -}}
+                </span> 
+              </a>
+            {%- endif -%}
         {%- endcase -%}
       {%- endfor -%}          
     </div>
@@ -214,8 +209,8 @@
       ]
     },
     {
-      "type": "buttons",
-      "name": "t:sections.image-banner.blocks.buttons.name",
+      "type": "button",
+      "name": "Button",
       "limit": 1,
       "settings": [
         {
@@ -235,24 +230,6 @@
           "id": "button_style_secondary_1",
           "default": false,
           "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_1.label"
-        },
-        {
-          "type": "text",
-          "id": "button_label_2",
-          "default": "Button label",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_label_2.label",
-          "info": "t:sections.image-banner.blocks.buttons.settings.button_label_2.info"
-        },
-        {
-          "type": "url",
-          "id": "button_link_2",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_link_2.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "button_style_secondary_2",
-          "default": false,
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
         }
       ]
     }
@@ -268,7 +245,7 @@
           "type": "paragraph"
         },
         {
-          "type": "buttons"
+          "type": "button"
         }
       ]
     }

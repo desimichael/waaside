@@ -41,18 +41,13 @@
               {{ block.settings.title | escape }}
             </h2>
           {%- when 'buttons' -%}
-            <div
-              class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
-              {{ block.shopify_attributes }}
-            >
-              {%- if block.settings.button_label != blank -%}
-                <a href="{{ block.settings.button_link }}" class="hero2__button" {{ block.shopify_attributes }}>
-                  <span>
-                    {{- block.settings.button_label | escape -}}
-                  </span> 
-                </a>
-              {%- endif -%}
-            </div>
+            {%- if block.settings.button_label != blank -%}
+              <a href="{{ block.settings.button_link }}" class="hero2__button" {{ block.shopify_attributes }}>
+                <span>
+                  {{- block.settings.button_label | escape -}}
+                </span> 
+              </a>
+            {%- endif -%}
         {%- endcase -%}
         {%- endfor -%} 
       </div>
@@ -60,7 +55,7 @@
   </div>
   <!-- left image end  -->
 
-  <!-- right image start  -->
+  <!-- right image start -->
   <div class="hero2__collections2 hero2__collections2--aligned-{{ section.settings.info_alignment_2 }}">
       {% if section.settings.image_2 != blank %}
       {%- liquid
@@ -92,8 +87,8 @@
       {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
     </div>
   {%- endif -%}
-  {% assign overlay_opacity = section.settings.overlay_opacity_2 | divided_by: 100.00 %}
-    <div class="hero2__content-container" style="background-color: {{ section.settings.background_2 | color_modify: 'alpha', overlay_opacity }}">
+  {% assign overlay_opacity_2 = section.settings.overlay_opacity_2 | divided_by: 100.00 %}
+    <div class="hero2__content-container" style="background-color: {{ section.settings.background_2 | color_modify: 'alpha', overlay_opacity_2 }}">
       <div class="hero2__info">
         {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -102,18 +97,13 @@
               {{ block.settings.title_2 | escape }}
             </h2>
           {%- when 'buttons' -%}
-            <div
-              class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
-              {{ block.shopify_attributes }}
-            >
-              {%- if block.settings.button_label != blank -%}
-                <a href="{{ block.settings.button_link }}" class="hero2__button" {{ block.shopify_attributes }}>
-                  <span>
-                    {{- block.settings.button_label | escape -}}
-                  </span> 
-                </a>
-              {%- endif -%}
-            </div>
+            {%- if block.settings.button_label_2 != blank -%}
+              <a href="{{ block.settings.button_link_2 }}" class="hero2__button" {{ block.shopify_attributes }}>
+                <span>
+                  {{- block.settings.button_label_2 | escape -}}
+                </span> 
+              </a>
+            {%- endif -%}
         {%- endcase -%}
         {%- endfor -%} 
       </div>
@@ -141,23 +131,23 @@
       "options": [
         {
           "value": "25",
-          "label": "Height 25%"
+          "label": "25%"
         },
         {
           "value": "50",
-          "label": "Height 50%"
+          "label": "50%"
         },
         {
           "value": "75",
-          "label": "Height 75%"
+          "label": "75%"
         },
         {
           "value": "100",
-          "label": "Height 100%"
+          "label": "100%"
         }
       ],
       "default": "100",
-      "label": "Height 100%"
+      "label": "Hero Height"
     },
     {
       "type": "image_picker",
