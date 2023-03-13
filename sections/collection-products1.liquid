@@ -65,7 +65,7 @@
                   {{ product.price | money }}
                 </div>
               {%- endif -%}
-              <ul class="collection1__colors">
+              <ul class="collection1__colors collection1__colors--aligned-{{ section.settings.color_alignment }}">
                 <li
                   class="collection1__color collection1__color--red">
                 </li>
@@ -201,7 +201,7 @@
           "label": "6 Columns"
         }
       ],
-      "default": "col-xl-4",
+      "default": "col-xl-3",
       "label": "Extra large devices"
     },
     {
@@ -249,7 +249,7 @@
           "label": "6 Columns"
         }
       ],
-      "default": "col-md-3",
+      "default": "col-md-4",
       "label": "Medium devices"
     },
     {
@@ -283,6 +283,22 @@
       ],
       "default": "left",
       "label": "Info text alignment"
+    },
+    {
+      "type": "select",
+      "id": "color_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Align left"
+        },
+        {
+          "value": "center",
+          "label": "Align center"
+        }
+      ],
+      "default": "left",
+      "label": "Color alignment"
     },
     {
       "type": "color",
