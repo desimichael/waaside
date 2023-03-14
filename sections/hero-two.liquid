@@ -1,37 +1,37 @@
 <div class="hero hero2 hero2--vh{{ section.settings.hero_height }}">
   <!-- left image start -->
   <div class="hero2__collections1 hero2__collections1--aligned-{{ section.settings.info_alignment }}">
-      {% if section.settings.image != blank %}
-      {%- liquid
-          assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
-          if section.settings.image != blank
-            assign image_class = 'hero2__bg'
-          endif
-          if section.settings.image != blank
-            assign sizes = '(min-width: 750px) 50vw, 100vw'
-          elsif section.settings.image != blank
-            assign sizes = '50vw'
-          else
-            assign sizes = '100vw'
-          endif
-        -%}
-        {{
-          section.settings.image
-          | image_url: width: 3840
-          | image_tag:
-            loading: 'lazy',
-            width: section.settings.image.width,
-            height: image_height,
-            class: image_class,
-            sizes: sizes,
-            widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
-        }}
-      {%- elsif section.settings.image == blank -%}
-    <div>
-      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
-    </div>
-  {%- endif -%}
-  {% assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.00 %}
+    {% if section.settings.image != blank %}
+    {%- liquid
+        assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
+        if section.settings.image != blank
+          assign image_class = 'hero2__bg'
+        endif
+        if section.settings.image != blank
+          assign sizes = '(min-width: 750px) 50vw, 100vw'
+        elsif section.settings.image != blank
+          assign sizes = '50vw'
+        else
+          assign sizes = '100vw'
+        endif
+      -%}
+      {{
+        section.settings.image
+        | image_url: width: 3840
+        | image_tag:
+          loading: 'lazy',
+          width: section.settings.image.width,
+          height: image_height,
+          class: image_class,
+          sizes: sizes,
+          widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+      }}
+    {%- elsif section.settings.image == blank -%}
+      <div>
+        {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    {%- endif -%}
+    {% assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.00 %}
     <div class="hero2__content-container" style="background-color: {{ section.settings.background | color_modify: 'alpha', overlay_opacity }}">
       <div class="hero2__info">
         {%- for block in section.blocks -%}

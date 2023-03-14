@@ -21,7 +21,7 @@
               </span>
             </div>
             {% if product.images[0] != blank %}
-              <a href="{{ product.url }}" class="collection1__image-link">
+              <a href="{{ product.url }}" class="collection1__image-link collection1__image-link--{{ section.settings.bg_shape }}">
                 {%- liquid 
                 assign image_height = product.images[0].width | divided_by: product.images[0].aspect_ratio
                   if product.images[0] != blank
@@ -49,7 +49,7 @@
               </a>
             {%- elsif product.images[0] == blank -%}
               <div>
-                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                {{ 'product-2' | placeholder_svg_tag: 'placeholder-svg' }}
               </div>
             {%- endif -%}
           </div>
@@ -143,6 +143,26 @@
       ],
       "default": "cover",
       "label": "Product image fit"
+    },
+    {
+      "type": "select",
+      "id": "bg_shape",
+      "options": [
+        {
+          "value": "rectangle",
+          "label": "Rectangle Background"
+        },
+        {
+          "value": "circle",
+          "label": "Circle Background"
+        },
+        {
+          "value": "square",
+          "label": "Square Background"
+        }
+      ],
+      "default": "rectangle",
+      "label": "Background Shape"
     },
     {
       "type": "checkbox",
@@ -249,7 +269,7 @@
           "label": "6 Columns"
         }
       ],
-      "default": "col-md-4",
+      "default": "col-md-6",
       "label": "Medium devices"
     },
     {
@@ -319,7 +339,14 @@
   ],
   "presets": [
     {
-      "name": "Collection Prod 1 Img"
+      "name": "Collection Prod 1 Img",
+      "settings": {
+        "collection": "Collection Prod 1 Img",
+        "total_products": "8",
+        "image_fit": "cover",
+        "show_price": true,
+        "md_col": "md-col-4"
+      }
     }
   ]
 }
