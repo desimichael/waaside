@@ -5,23 +5,12 @@
       <div class="{{ section.settings.xxl_col }} {{ section.settings.xl_col }} {{ section.settings.lg_col }} {{ section.settings.md_col }} {{ section.settings.sm_col }}">
         <div class="collection1__product-item">
           {% assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.00 %}
+          {% assign overlay_opacity_2 = section.settings.overlay_opacity_2 | divided_by: 100.00 %}
           <div class="collection1__product-image collection1__product-image--{{ section.settings.image_fit }}"
           style="background-color: {{ section.settings.background | color_modify: 'alpha', overlay_opacity }}">
-            <div class="collection1__like">
-              <i class="far fa-heart"></i>
-            </div>
-            <div class="collection1__new-item">
-              <span class="collection1__new-item-text">
-                new
-              </span>
-            </div>
-            <div class="collection1__sale-item">
-              <span class="collection1__sale-item-text">
-                sale
-              </span>
-            </div>
             {% if product.images[0] != blank %}
-              <a href="{{ product.url }}" class="collection1__image-link collection1__image-link--{{ section.settings.bg_shape }}">
+              <a href="{{ product.url }}" class="collection1__image-link collection1__image-link--{{ section.settings.bg_shape }}"
+              style="background-color: {{ section.settings.background_2 | color_modify: 'alpha', overlay_opacity_2 }}">
                 {%- liquid 
                 assign image_height = product.images[0].width | divided_by: product.images[0].aspect_ratio
                   if product.images[0] != blank
@@ -49,7 +38,7 @@
               </a>
             {%- elsif product.images[0] == blank -%}
               <div>
-                {{ 'product-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                {{ 'product-2' | placeholder_svg_tag }}
               </div>
             {%- endif -%}
           </div>
@@ -65,17 +54,19 @@
                   {{ product.price | money }}
                 </div>
               {%- endif -%}
-              <ul class="collection1__colors collection1__colors--aligned-{{ section.settings.color_alignment }}">
-                <li
-                  class="collection1__color collection1__color--red">
-                </li>
-                <li
-                  class="collection1__color collection1__color--green">
-                </li>
-                <li
-                  class="collection1__color collection1__color--blue">
-                </li>
-              </ul>
+              {% if section.settings.show_colors == true %}
+                <ul class="collection1__colors collection1__colors--aligned-{{ section.settings.color_alignment }}">
+                  <li
+                    class="collection1__color collection1__color--red">
+                  </li>
+                  <li
+                    class="collection1__color collection1__color--green">
+                  </li>
+                  <li
+                    class="collection1__color collection1__color--blue">
+                  </li>
+                </ul>     
+              {% endif %}
             </div>
           </div>
         </div>
@@ -103,78 +94,6 @@
       "type": "collection",
       "id": "collection",
       "label": "Collection Products"
-    },
-    {
-      "type": "select",
-      "id": "total_products",
-      "options": [
-        {
-          "value": "4",
-          "label": "Show 4"
-        },
-        {
-          "value": "8",
-          "label": "Show 8"
-        },
-        {
-          "value": "12",
-          "label": "Show 12"
-        },
-        {
-          "value": "16",
-          "label": "Show 16"
-        }
-      ],
-      "default": "8",
-      "label": "Total Products"
-    },
-    {
-      "type": "select",
-      "id": "image_fit",
-      "options": [
-        {
-          "value": "cover",
-          "label": "Image cover"
-        },
-        {
-          "value": "contain",
-          "label": "Image contain"
-        }
-      ],
-      "default": "cover",
-      "label": "Product image fit"
-    },
-    {
-      "type": "select",
-      "id": "bg_shape",
-      "options": [
-        {
-          "value": "rectangle",
-          "label": "Rectangle Background"
-        },
-        {
-          "value": "circle",
-          "label": "Circle Background"
-        },
-        {
-          "value": "square",
-          "label": "Square Background"
-        }
-      ],
-      "default": "rectangle",
-      "label": "Background Shape"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_title",
-      "label": "Show Product Title",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_price",
-      "label": "Show Product Price",
-      "default": true
     },
     {
       "type": "select",
@@ -289,6 +208,95 @@
       "label": "Small devices"
     },
     {
+      "type": "range",
+      "id": "total_products",
+      "min": 1,
+      "max": 16,
+      "step": 1,
+      "label": "Total Products",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Product BG color",
+      "default": "#efeeee"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Prod BG color opacity",
+      "default": 100
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Image cover"
+        },
+        {
+          "value": "contain",
+          "label": "Image contain"
+        }
+      ],
+      "default": "cover",
+      "label": "Product image fit"
+    },
+    {
+      "type": "select",
+      "id": "bg_shape",
+      "options": [
+        {
+          "value": "rectangle",
+          "label": "Rectangle Background"
+        },
+        {
+          "value": "circle",
+          "label": "Circle Background"
+        },
+        {
+          "value": "square",
+          "label": "Square Background"
+        }
+      ],
+      "default": "rectangle",
+      "label": "Background Shape"
+    },
+    {
+      "type": "color",
+      "id": "background_2",
+      "label": "BG shape color",
+      "default": "#efeeee"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity_2",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "BG shape color opacity",
+      "default": 100
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show Product Title",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show Product Price",
+      "default": true
+    },
+    {
       "type": "select",
       "id": "info_alignment",
       "options": [
@@ -303,38 +311,6 @@
       ],
       "default": "left",
       "label": "Info text alignment"
-    },
-    {
-      "type": "select",
-      "id": "color_alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "Align left"
-        },
-        {
-          "value": "center",
-          "label": "Align center"
-        }
-      ],
-      "default": "left",
-      "label": "Color alignment"
-    },
-    {
-      "type": "color",
-      "id": "background",
-      "label": "Background color",
-      "default": "#efeeee"
-    },
-    {
-      "type": "range",
-      "id": "overlay_opacity",
-      "min": 0,
-      "max": 100,
-      "step": 10,
-      "unit": "%",
-      "label": "Background color opacity",
-      "default": 100
     }
   ],
   "presets": [
@@ -342,10 +318,11 @@
       "name": "Collection Prod 1 Img",
       "settings": {
         "collection": "Collection Prod 1 Img",
-        "total_products": "8",
+        "total_products": 8,
         "image_fit": "cover",
+        "show_title": true,
         "show_price": true,
-        "md_col": "md-col-4"
+        "md_col": "md-col-3"
       }
     }
   ]

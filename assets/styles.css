@@ -1430,7 +1430,7 @@ table {
 }
 
 .collection1 div[class*=col-] {
-	margin-bottom: 2rem
+	margin-bottom: 8rem
 }
 
 .collection1__like {
@@ -1507,8 +1507,7 @@ table {
 
 .collection1__product-item {
 	position: relative;
-	height: 400px;
-	margin-bottom: 8rem
+	height: 400px
 }
 
 .collection1__product-image {
