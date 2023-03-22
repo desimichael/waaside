@@ -1067,7 +1067,9 @@ table {
 
 .announce-bar {
 	padding: 15px;
-	background: #001219
+	background: #001219;
+	display: flex;
+	justify-content: center
 }
 
 .announce-bar__link {
@@ -10804,7 +10806,7 @@ progress {
 }
 
 body {
-	background: snow
+	background: #f8f9fa
 }
 
 .fixed-nav.fixed-nav--transparent .header,
