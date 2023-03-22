@@ -55,7 +55,7 @@
                 </div>
               {%- endif -%}
               {% if section.settings.show_colors == true %}
-                <ul class="collection1__colors collection1__colors--aligned-{{ section.settings.color_alignment }}">
+                <ul class="collection1__colors">
                   <li
                     class="collection1__color collection1__color--red">
                   </li>
@@ -97,124 +97,19 @@
     },
     {
       "type": "select",
-      "id": "xxl_col",
+      "id": "image_fit",
       "options": [
         {
-          "value": "col-xxl-6",
-          "label": "2 Columns"
+          "value": "cover",
+          "label": "Image cover"
         },
         {
-          "value": "col-xxl-4",
-          "label": "3 Columns"
-        },
-        {
-          "value": "col-xxl-3",
-          "label": "4 Columns"
-        },
-        {
-          "value": "col-xxl-2",
-          "label": "6 Columns"
+          "value": "contain",
+          "label": "Image contain"
         }
       ],
-      "default": "col-xxl-2",
-      "label": "2 xl devices"
-    },
-    {
-      "type": "select",
-      "id": "xl_col",
-      "options": [
-        {
-          "value": "col-xl-6",
-          "label": "2 Columns"
-        },
-        {
-          "value": "col-xl-4",
-          "label": "3 Columns"
-        },
-        {
-          "value": "col-xl-3",
-          "label": "4 Columns"
-        },
-        {
-          "value": "col-xl-2",
-          "label": "6 Columns"
-        }
-      ],
-      "default": "col-xl-3",
-      "label": "Extra large devices"
-    },
-    {
-      "type": "select",
-      "id": "lg_col",
-      "options": [
-        {
-          "value": "col-lg-6",
-          "label": "2 Columns"
-        },
-        {
-          "value": "col-lg-4",
-          "label": "3 Columns"
-        },
-        {
-          "value": "col-lg-3",
-          "label": "4 Columns"
-        },
-        {
-          "value": "col-lg-2",
-          "label": "6 Columns"
-        }
-      ],
-      "default": "col-lg-3",
-      "label": "Large devices"
-    },
-    {
-      "type": "select",
-      "id": "md_col",
-      "options": [
-        {
-          "value": "col-md-6",
-          "label": "2 Columns"
-        },
-        {
-          "value": "col-md-4",
-          "label": "3 Columns"
-        },
-        {
-          "value": "col-md-3",
-          "label": "4 Columns"
-        },
-        {
-          "value": "col-md-2",
-          "label": "6 Columns"
-        }
-      ],
-      "default": "col-md-6",
-      "label": "Medium devices"
-    },
-    {
-      "type": "select",
-      "id": "sm_col",
-      "options": [
-        {
-          "value": "col-sm-6",
-          "label": "2 Columns"
-        },
-        {
-          "value": "col-sm-12",
-          "label": "1 Columns"
-        }
-      ],
-      "default": "col-sm-6",
-      "label": "Small devices"
-    },
-    {
-      "type": "range",
-      "id": "total_products",
-      "min": 1,
-      "max": 16,
-      "step": 1,
-      "label": "Total Products",
-      "default": 8
+      "default": "cover",
+      "label": "Product image fit"
     },
     {
       "type": "color",
@@ -231,22 +126,6 @@
       "unit": "%",
       "label": "Prod BG color opacity",
       "default": 100
-    },
-    {
-      "type": "select",
-      "id": "image_fit",
-      "options": [
-        {
-          "value": "cover",
-          "label": "Image cover"
-        },
-        {
-          "value": "contain",
-          "label": "Image contain"
-        }
-      ],
-      "default": "cover",
-      "label": "Product image fit"
     },
     {
       "type": "select",
@@ -272,7 +151,7 @@
       "type": "color",
       "id": "background_2",
       "label": "BG shape color",
-      "default": "#efeeee"
+      "default": "#ffffff"
     },
     {
       "type": "range",
@@ -311,18 +190,126 @@
       ],
       "default": "left",
       "label": "Info text alignment"
+    },
+    {
+      "type": "select",
+      "id": "xxl_col",
+      "options": [
+        {
+          "value": "col-xxl-6",
+          "label": "2 Columns"
+        },
+        {
+          "value": "col-xxl-4",
+          "label": "3 Columns"
+        },
+        {
+          "value": "col-xxl-3",
+          "label": "4 Columns"
+        },
+        {
+          "value": "col-xxl-2",
+          "label": "6 Columns"
+        }
+      ],
+      "default": "col-xxl-2",
+      "label": "2 xl devices"
+    },
+    {
+      "type": "select",
+      "id": "xl_col",
+      "options": [
+        {
+          "value": "col-xl-6",
+          "label": "2 Columns"
+        },
+        {
+          "value": "col-xl-4",
+          "label": "3 Columns"
+        },
+        {
+          "value": "col-xl-3",
+          "label": "4 Columns"
+        }
+      ],
+      "default": "col-xl-3",
+      "label": "Extra large devices"
+    },
+    {
+      "type": "select",
+      "id": "lg_col",
+      "options": [
+        {
+          "value": "col-lg-6",
+          "label": "2 Columns"
+        },
+        {
+          "value": "col-lg-4",
+          "label": "3 Columns"
+        },
+        {
+          "value": "col-lg-3",
+          "label": "4 Columns"
+        }
+      ],
+      "default": "col-lg-3",
+      "label": "Large devices"
+    },
+    {
+      "type": "select",
+      "id": "md_col",
+      "options": [
+        {
+          "value": "col-md-6",
+          "label": "2 Columns"
+        },
+        {
+          "value": "col-md-4",
+          "label": "3 Columns"
+        },
+        {
+          "value": "col-md-3",
+          "label": "4 Columns"
+        },
+        {
+          "value": "col-md-2",
+          "label": "6 Columns"
+        }
+      ],
+      "default": "col-md-4",
+      "label": "Medium devices"
+    },
+    {
+      "type": "select",
+      "id": "sm_col",
+      "options": [
+        {
+          "value": "col-sm-6",
+          "label": "2 Columns"
+        },
+        {
+          "value": "col-sm-12",
+          "label": "1 Columns"
+        }
+      ],
+      "default": "col-sm-6",
+      "label": "Small devices"
+    },
+    {
+      "type": "range",
+      "id": "total_products",
+      "min": 1,
+      "max": 16,
+      "step": 1,
+      "label": "Total Products",
+      "default": 8
     }
   ],
   "presets": [
     {
       "name": "Collection Prod 1 Img",
       "settings": {
-        "collection": "Collection Prod 1 Img",
-        "total_products": 8,
-        "image_fit": "cover",
-        "show_title": true,
-        "show_price": true,
-        "md_col": "md-col-3"
+        "collection": "Collection Prod 1 Img"
       }
     }
   ]
