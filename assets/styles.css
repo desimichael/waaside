@@ -1096,7 +1096,8 @@ table {
 	position: relative;
 	width: 100%;
 	overflow: hidden;
-	margin-bottom: 50px
+	margin-bottom: 50px;
+	height: calc(100vh - 100px)
 }
 
 .hero1--vh25 {
@@ -1115,39 +1116,117 @@ table {
 	height: 100vh
 }
 
-.hero1--aligned-left .hero1__content-container {
+.hero1--aligned-left-top .hero1__content-container {
+	align-items: flex-start;
 	justify-content: flex-start
 }
 
-.hero1--aligned-left .hero1__content-container .hero1__info {
+.hero1--aligned-left-top .hero1__content-container .hero1__info {
 	text-align: left
 }
 
-.hero1--aligned-left .hero1__content-container .hero1__info .hero1__paragraph {
+.hero1--aligned-left-top .hero1__content-container .hero1__info .hero1__paragraph {
 	margin-right: auto
 }
 
-.hero1--aligned-center .hero1__content-container {
+.hero1--aligned-left-center .hero1__content-container {
+	justify-content: flex-start
+}
+
+.hero1--aligned-left-center .hero1__content-container .hero1__info {
+	text-align: left
+}
+
+.hero1--aligned-left-center .hero1__content-container .hero1__info .hero1__paragraph {
+	margin-right: auto
+}
+
+.hero1--aligned-left-bottom .hero1__content-container {
+	align-items: flex-end;
+	justify-content: flex-start
+}
+
+.hero1--aligned-left-bottom .hero1__content-container .hero1__info {
+	text-align: left
+}
+
+.hero1--aligned-left-bottom .hero1__content-container .hero1__info .hero1__paragraph {
+	margin-right: auto
+}
+
+.hero1--aligned-center-top .hero1__content-container {
+	align-items: flex-start;
 	justify-content: center
 }
 
-.hero1--aligned-center .hero1__content-container .hero1__info {
+.hero1--aligned-center-top .hero1__content-container .hero1__info {
 	text-align: center
 }
 
-.hero1--aligned-center .hero1__content-container .hero1__info .hero1__paragraph {
+.hero1--aligned-center-top .hero1__content-container .hero1__info .hero1__paragraph {
 	margin: 0 auto
 }
 
-.hero1--aligned-right .hero1__content-container {
+.hero1--aligned-center-center .hero1__content-container {
+	justify-content: center
+}
+
+.hero1--aligned-center-center .hero1__content-container .hero1__info {
+	text-align: center
+}
+
+.hero1--aligned-center-center .hero1__content-container .hero1__info .hero1__paragraph {
+	margin: 0 auto
+}
+
+.hero1--aligned-center-bottom .hero1__content-container {
+	align-items: flex-end;
+	justify-content: center
+}
+
+.hero1--aligned-center-bottom .hero1__content-container .hero1__info {
+	text-align: center
+}
+
+.hero1--aligned-center-bottom .hero1__content-container .hero1__info .hero1__paragraph {
+	margin: 0 auto
+}
+
+.hero1--aligned-right-top .hero1__content-container {
+	align-items: flex-start;
 	justify-content: flex-end
 }
 
-.hero1--aligned-right .hero1__content-container .hero1__info {
+.hero1--aligned-right-top .hero1__content-container .hero1__info {
 	text-align: right
 }
 
-.hero1--aligned-right .hero1__content-container .hero1__info .hero1__paragraph {
+.hero1--aligned-right-top .hero1__content-container .hero1__info .hero1__paragraph {
+	margin-left: auto
+}
+
+.hero1--aligned-right-center .hero1__content-container {
+	justify-content: flex-end
+}
+
+.hero1--aligned-right-center .hero1__content-container .hero1__info {
+	text-align: right
+}
+
+.hero1--aligned-right-center .hero1__content-container .hero1__info .hero1__paragraph {
+	margin-left: auto
+}
+
+.hero1--aligned-right-bottom .hero1__content-container {
+	align-items: flex-end;
+	justify-content: flex-end
+}
+
+.hero1--aligned-right-bottom .hero1__content-container .hero1__info {
+	text-align: right
+}
+
+.hero1--aligned-right-bottom .hero1__content-container .hero1__info .hero1__paragraph {
 	margin-left: auto
 }
 
@@ -1170,7 +1249,7 @@ table {
 	background: rgba(0, 0, 0, .4);
 	display: flex;
 	align-items: center;
-	padding: 0 100px;
+	padding: 25px;
 	z-index: 2
 }
 
@@ -1227,6 +1306,7 @@ table {
 	color: #f8f8ff;
 	line-height: 2;
 	max-width: 60%;
+	margin: 0;
 	padding-bottom: 1.5rem
 }
 
@@ -1249,6 +1329,18 @@ table {
 	background: #cc553e;
 	color: #f8f8ff;
 	border: 1px solid snow
+}
+
+@media(max-width:767px) {
+	.hero1__title {
+		font-size: 6rem
+	}
+}
+
+@media(max-width:320px) {
+	.hero1__title {
+		font-size: 4.5rem
+	}
 }
 
 .hero2 {
@@ -1425,6 +1517,30 @@ table {
 	background: #cc553e;
 	color: #f8f8ff;
 	border: 1px solid snow
+}
+
+@media(max-width:767px) {
+	.hero2__title {
+		font-size: 3rem
+	}
+}
+
+@media(max-width:575px) {
+	.hero2 {
+		flex-direction: column
+	}
+
+	.hero2 .hero2__collections1,
+	.hero2 .hero2__collections2 {
+		width: 100%;
+		margin-bottom: 2rem
+	}
+}
+
+@media(max-width:320px) {
+	.hero2__title {
+		font-size: 2.5rem
+	}
 }
 
 .collection1 {
