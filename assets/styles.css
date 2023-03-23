@@ -138,7 +138,7 @@ table {
 
 .header1 {
 	font-family: Lato, sans-serif;
-	height: 100px;
+	height: 90px;
 	padding: 0 25px;
 	display: flex;
 	align-items: center;
@@ -285,7 +285,7 @@ table {
 	color: #cc553e
 }
 
-@media(max-width:935px) {
+@media(max-width:991px) {
 	.header1 {
 		position: relative
 	}
@@ -436,20 +436,20 @@ table {
 	}
 }
 
-@media(max-width:576px) {
+@media(max-width:768px) {
 	.header1 {
 		padding: 0 10px
 	}
 }
 
-@media(max-width:428px) {
+@media(max-width:575px) {
 	.header1 .header1__mobile-menu .header1__mobile-open {
 		padding: 5px
 	}
 }
 
 .header2 {
-	height: 100px;
+	height: 90px;
 	padding: 0 25px;
 	display: flex;
 	align-items: center;
@@ -596,7 +596,7 @@ table {
 	color: #cc553e
 }
 
-@media(max-width:935px) {
+@media(max-width:991px) {
 	.header2 {
 		position: relative
 	}
@@ -637,7 +637,6 @@ table {
 		justify-content: center;
 		align-items: center;
 		padding: 10px;
-		font-size: 1.5rem;
 		color: #000;
 		cursor: pointer
 	}
@@ -748,13 +747,13 @@ table {
 	}
 }
 
-@media(max-width:576px) {
+@media(max-width:768px) {
 	.header2 {
 		padding: 0 10px
 	}
 }
 
-@media(max-width:428px) {
+@media(max-width:575px) {
 	.header2 .header2__mobile-menu .header2__mobile-open {
 		padding: 5px
 	}
@@ -762,7 +761,7 @@ table {
 
 .header3 {
 	font-family: Lato, sans-serif;
-	height: 100px;
+	height: 90px;
 	padding: 0 25px;
 	display: flex;
 	align-items: center;
@@ -900,7 +899,7 @@ table {
 	color: #cc553e
 }
 
-@media(max-width:935px) {
+@media(max-width:991px) {
 	.header3 {
 		position: relative
 	}
@@ -941,7 +940,6 @@ table {
 		justify-content: center;
 		align-items: center;
 		padding: 10px;
-		font-size: 1.5rem;
 		color: #000;
 		cursor: pointer
 	}
@@ -981,7 +979,6 @@ table {
 	}
 
 	.header3__mobile-close {
-		font-size: 1.5rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -1053,13 +1050,13 @@ table {
 	}
 }
 
-@media(max-width:576px) {
+@media(max-width:768px) {
 	.header3 {
 		padding: 0 10px
 	}
 }
 
-@media(max-width:428px) {
+@media(max-width:575px) {
 	.header3 .header3__mobile-menu .header3__mobile-open {
 		padding: 5px
 	}
@@ -1097,7 +1094,7 @@ table {
 	width: 100%;
 	overflow: hidden;
 	margin-bottom: 50px;
-	height: calc(100vh - 100px)
+	height: calc(100vh - 90px)
 }
 
 .hero1--vh25 {
@@ -1347,6 +1344,8 @@ table {
 	position: relative;
 	width: 100%;
 	overflow: hidden;
+	margin-bottom: 50px;
+	height: calc(100vh - 90px);
 	display: flex
 }
 
