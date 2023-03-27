@@ -1,60 +1,102 @@
-<div class="collection collection1">
-  <div class="container">
-    <div class="row">
-      {%- for product in section.settings.collection.products limit: section.settings.total_products -%}
-      <div class="{{ section.settings.xxl_col }} {{ section.settings.xl_col }} {{ section.settings.lg_col }} {{ section.settings.md_col }} {{ section.settings.sm_col }}">
-        <div class="collection1__product-item">
-          {% assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.00 %}
-          {% assign overlay_opacity_2 = section.settings.overlay_opacity_2 | divided_by: 100.00 %}
-          <div class="collection1__product-image collection1__product-image--{{ section.settings.image_fit }}"
-          style="background-color: {{ section.settings.background | color_modify: 'alpha', overlay_opacity }}">
-            {% if product.images[0] != blank %}
-              <a href="{{ product.url }}" class="collection1__image-link collection1__image-link--{{ section.settings.bg_shape }}"
-              style="background-color: {{ section.settings.background_2 | color_modify: 'alpha', overlay_opacity_2 }}">
-                {%- liquid 
-                assign image_height = product.images[0].width | divided_by: product.images[0].aspect_ratio
-                  if product.images[0] != blank
-                    assign image_class = 'collection1__product-img'
-                  endif
-                  if product.images[0] != blank
-                    assign sizes = '(min-width: 750px) 50vw, 100vw'
-                  elsif product.images[0] != blank
-                    assign sizes = '50vw'
-                  else
-                    assign sizes = '100vw'
-                  endif
-                -%}
-                {{
-                  product.images[0]
-                  | image_url: width: 3840
-                  | image_tag:
-                    loading: 'lazy',
-                    width: product.images[0].width,
-                    height: image_height,
-                    class: image_class,
-                    sizes: sizes,
-                    widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
-                }}
-              </a>
-            {%- elsif product.images[0] == blank -%}
-              <div>
-                {{ 'product-2' | placeholder_svg_tag }}
+{% if section.settings.collection.all_products_count %}
+  <div class="collection collection1">
+    <div class="container">
+      <div class="row">
+        {%- for product in section.settings.collection.products limit: section.settings.total_products -%}
+        <div class="{{ section.settings.xxl_col }} {{ section.settings.xl_col }} {{ section.settings.lg_col }} {{ section.settings.md_col }} {{ section.settings.sm_col }}">
+          <div class="collection1__product-item">
+            {% assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.00 %}
+            {% assign overlay_opacity_2 = section.settings.overlay_opacity_2 | divided_by: 100.00 %}
+            <div class="collection1__product-image collection1__product-image--{{ section.settings.image_fit }}"
+            style="background-color: {{ section.settings.background | color_modify: 'alpha', overlay_opacity }}">
+            <div class="collection1__like">
+              <i class="far fa-heart"></i>
+            </div>
+            <div class="collection1__new-item">
+              <span class="collection1__new-item-text">new</span>
+            </div>
+            <div class="collection1__sale-item">
+              <span class="collection1__sale-item-text">sale</span>
+            </div>
+              {% if product.images[0] != blank %}
+                <a href="{{ product.url }}" class="collection1__image-link collection1__image-link--{{ section.settings.bg_shape }}"
+                style="background-color: {{ section.settings.background_2 | color_modify: 'alpha', overlay_opacity_2 }}">
+                  {%- liquid 
+                  assign image_height = product.images[0].width | divided_by: product.images[0].aspect_ratio
+                    if product.images[0] != blank
+                      assign image_class = 'collection1__product-img'
+                    endif
+                    if product.images[0] != blank
+                      assign sizes = '(min-width: 750px) 50vw, 100vw'
+                    elsif product.images[0] != blank
+                      assign sizes = '50vw'
+                    else
+                      assign sizes = '100vw'
+                    endif
+                  -%}
+                  {{
+                    product.images[0]
+                    | image_url: width: 3840
+                    | image_tag:
+                      loading: 'lazy',
+                      width: product.images[0].width,
+                      height: image_height,
+                      class: image_class,
+                      sizes: sizes,
+                      widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+                  }}
+                </a>
+              {%- endif -%}
+            </div>
+            <div class="collection1__product-info">
+              <div class="collection1__product-details collection1__product-details--aligned-{{ section.settings.info_alignment }}">
+                {%- if section.settings.show_title == true -%}
+                  <div class="collection1__product-title">
+                    {{ product.title }}
+                  </div>
+                {%- endif -%}
+                {%- if section.settings.show_price == true -%}
+                  <div class="collection1__product-price">
+                    {{ product.price | money }}
+                  </div>
+                {%- endif -%}
+                <ul class="collection1__colors">
+                  <li
+                    class="collection1__color collection1__color--green">
+                  </li>
+                </ul>  
               </div>
-            {%- endif -%}
+            </div>
           </div>
-          <div class="collection1__product-info">
-            <div class="collection1__product-details collection1__product-details--aligned-{{ section.settings.info_alignment }}">
-              {%- if section.settings.show_title == true -%}
-                <div class="collection1__product-title">
-                  {{ product.title }}
+        </div>   
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="collection collection1">
+    <div class="container">
+      <div class="row">
+        <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <div class="collection1__product-item">
+            <div class="collection1__product-image">
+              <div class="collection1__like"><i
+                  class="far fa-heart"></i></div>
+              <div class="collection1__new-item"><span
+                  class="collection1__new-item-text">new</span>
+              </div>
+              <div class="collection1__sale-item"><span
+                  class="collection1__sale-item-text">sale</span>
+              </div> 
+              <div class="collection1__image-link">
+                {{ 'collection-1' | placeholder_svg_tag: "collection1__product-img" }}
+              </div>
+            </div>
+            <div class="collection1__product-info">
+              <div class="collection1__product-details">
+                <div class="collection1__product-title">Products</div>
+                <div class="collection1__product-price">$50.00
                 </div>
-              {%- endif -%}
-              {%- if section.settings.show_price == true -%}
-                <div class="collection1__product-price">
-                  {{ product.price | money }}
-                </div>
-              {%- endif -%}
-              {% if section.settings.show_colors == true %}
                 <ul class="collection1__colors">
                   <li
                     class="collection1__color collection1__color--red">
@@ -65,16 +107,119 @@
                   <li
                     class="collection1__color collection1__color--blue">
                   </li>
-                </ul>     
-              {% endif %}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>   
-      {% endfor %}
+        <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <div class="collection1__product-item">
+            <div class="collection1__product-image">
+              <div class="collection1__like"><i
+                  class="far fa-heart"></i></div>
+              <div class="collection1__new-item"><span
+                  class="collection1__new-item-text">new</span>
+              </div>
+              <div class="collection1__sale-item"><span
+                  class="collection1__sale-item-text">sale</span>
+              </div> 
+              <div class="collection1__image-link">
+                {{ 'collection-1' | placeholder_svg_tag: "collection1__product-img" }}
+              </div>
+            </div>
+            <div class="collection1__product-info">
+              <div class="collection1__product-details">
+                <div class="collection1__product-title">Products</div>
+                <div class="collection1__product-price">$50.00
+                </div>
+                <ul class="collection1__colors">
+                  <li
+                    class="collection1__color collection1__color--red">
+                  </li>
+                  <li
+                    class="collection1__color collection1__color--green">
+                  </li>
+                  <li
+                    class="collection1__color collection1__color--blue">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <div class="collection1__product-item">
+            <div class="collection1__product-image">
+              <div class="collection1__like"><i
+                  class="far fa-heart"></i></div>
+              <div class="collection1__new-item"><span
+                  class="collection1__new-item-text">new</span>
+              </div>
+              <div class="collection1__sale-item"><span
+                  class="collection1__sale-item-text">sale</span>
+              </div> 
+              <div class="collection1__image-link">
+                {{ 'collection-1' | placeholder_svg_tag: "collection1__product-img" }}
+              </div>
+            </div>
+            <div class="collection1__product-info">
+              <div class="collection1__product-details">
+                <div class="collection1__product-title">Products</div>
+                <div class="collection1__product-price">$50.00
+                </div>
+                <ul class="collection1__colors">
+                  <li
+                    class="collection1__color collection1__color--red">
+                  </li>
+                  <li
+                    class="collection1__color collection1__color--green">
+                  </li>
+                  <li
+                    class="collection1__color collection1__color--blue">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-6">
+          <div class="collection1__product-item">
+            <div class="collection1__product-image">
+              <div class="collection1__like"><i
+                  class="far fa-heart"></i></div>
+              <div class="collection1__new-item"><span
+                  class="collection1__new-item-text">new</span>
+              </div>
+              <div class="collection1__sale-item"><span
+                  class="collection1__sale-item-text">sale</span>
+              </div> 
+              <div class="collection1__image-link">
+                {{ 'collection-1' | placeholder_svg_tag: "collection1__product-img" }}
+              </div>
+            </div>
+            <div class="collection1__product-info">
+              <div class="collection1__product-details">
+                <div class="collection1__product-title">Products</div>
+                <div class="collection1__product-price">$50.00
+                </div>
+                <ul class="collection1__colors">
+                  <li
+                    class="collection1__color collection1__color--red">
+                  </li>
+                  <li
+                    class="collection1__color collection1__color--green">
+                  </li>
+                  <li
+                    class="collection1__color collection1__color--blue">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
-</div>
+{% endif %}
 
 
 
@@ -108,7 +253,7 @@
           "label": "Image contain"
         }
       ],
-      "default": "cover",
+      "default": "contain",
       "label": "Product image fit"
     },
     {
@@ -299,7 +444,7 @@
       "type": "range",
       "id": "total_products",
       "min": 1,
-      "max": 16,
+      "max": 20,
       "step": 1,
       "label": "Total products to show",
       "default": 8
@@ -309,7 +454,12 @@
     {
       "name": "Collection Prod 1 Img",
       "settings": {
-        "collection": "Collection Prod 1 Img"
+        "background": "#efeeee",
+        "xxl_col": "col-xxl-2",
+        "xl_col": "col-xl-3",
+        "lg_col": "col-lg-3",
+        "md_col": "col-md-4",
+        "sm_col": "col-sm-2"
       }
     }
   ]

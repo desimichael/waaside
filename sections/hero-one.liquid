@@ -41,7 +41,7 @@
               {{ block.settings.title | escape }}
             </h2>
           {%- when 'paragraph' -%}
-            <p class="hero1__paragraph">
+            <p class="hero1__paragraph" style="color: {{ block.settings.paragraph_color }}">
               {{ block.settings.paragraph | escape }}
             </p>
           {%- when 'button' -%}
@@ -105,43 +105,43 @@
       "id": "info_alignment",
       "options": [
         {
-          "value": "center_top",
+          "value": "center-top",
           "label": "Center top"
         },
         {
-          "value": "center_center",
+          "value": "center-center",
           "label": "Center center"
         },
         {
-          "value": "center_bottom",
+          "value": "center-bottom",
           "label": "Center bottom"
         },
         {
-          "value": "left_top",
+          "value": "left-top",
           "label": "Left top"
         },
         {
-          "value": "left_center",
+          "value": "left-center",
           "label": "Left center"
         },
         {
-          "value": "left_bottom",
+          "value": "left-bottom",
           "label": "Left bottom"
         },
         {
-          "value": "right_top",
+          "value": "right-top",
           "label": "Right top"
         },
         {
-          "value": "right_center",
+          "value": "right-center",
           "label": "Right center"
         },
         {
-          "value": "right_bottom",
+          "value": "right-bottom",
           "label": "Right bottom"
         }
       ],
-      "default": "center_center",
+      "default": "center-center",
       "label": "Info text alignment"
     },
     {
@@ -217,24 +217,10 @@
           "default": "It shines, glitters, reflects light."
         },
         {
-          "type": "select",
-          "id": "text_style",
-          "options": [
-            {
-              "value": "body",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__1.label"
-            },
-            {
-              "value": "subtitle",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__2.label"
-            },
-            {
-              "value": "caption-with-letter-spacing",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__3.label"
-            }
-          ],
-          "default": "body",
-          "label": "t:sections.image-banner.blocks.text.settings.text_style.label"
+          "type": "color",
+          "id": "paragraph_color",
+          "label": "Title color",
+          "default": "#FFFFFF"
         }
       ]
     },
