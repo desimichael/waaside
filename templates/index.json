@@ -1,26 +1,5 @@
 {
   "sections": {
-    "662be825-6d8d-44ad-a087-aba067228110": {
-      "type": "collection-products1",
-      "settings": {
-        "collection": "vans",
-        "image_fit": "contain",
-        "background": "#efeeee",
-        "overlay_opacity": 100,
-        "bg_shape": "circle",
-        "background_2": "#ffffff",
-        "overlay_opacity_2": 100,
-        "show_title": true,
-        "show_price": true,
-        "info_alignment": "left",
-        "xxl_col": "col-xxl-2",
-        "xl_col": "col-xl-3",
-        "lg_col": "col-lg-3",
-        "md_col": "col-md-4",
-        "sm_col": "col-sm-6",
-        "total_products": 8
-      }
-    },
     "032eaaf2-2289-4d6c-8993-33f215bf1bb7": {
       "type": "hero-two",
       "blocks": {
@@ -270,7 +249,6 @@
     }
   },
   "order": [
-    "662be825-6d8d-44ad-a087-aba067228110",
     "032eaaf2-2289-4d6c-8993-33f215bf1bb7",
     "image_banner",
     "rich_text",
