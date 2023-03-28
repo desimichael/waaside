@@ -1368,7 +1368,7 @@ table {
 .hero2 .hero2__collections1,
 .hero2 .hero2__collections2 {
 	position: relative;
-	width: 50%;
+	width: 100%;
 	height: 100%
 }
 
@@ -2022,7 +2022,7 @@ table {
 	margin-bottom: 1rem
 }
 
-.collection2__product-img {
+.collection2__product-image {
 	position: relative;
 	height: 400px;
 	display: flex;
@@ -2033,43 +2033,46 @@ table {
 	transition: all .3s ease-in-out
 }
 
-.collection2__product-img:hover {
+.collection2__product-image--contain .collection2__product-back-image,
+.collection2__product-image--contain .collection2__product-front-image {
+	object-fit: contain
+}
+
+.collection2__product-image--cover .collection2__product-back-image,
+.collection2__product-image--cover .collection2__product-front-image {
+	object-fit: cover
+}
+
+.collection2__product-image-link {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	width: 100%
+}
+
+.collection2__product-image:hover {
 	cursor: pointer
 }
 
-.collection2__product-img:hover .collection2__product-front-img {
+.collection2__product-image:hover .collection2__product-front-image {
 	opacity: 0;
 	visibility: hidden
 }
 
-.collection2__product-img:hover .collection2__product-back-img {
+.collection2__product-image:hover .collection2__product-back-image {
 	opacity: 1;
 	visibility: visible
 }
 
-.collection2__product-front-img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: block;
-	object-position: center;
-	height: 100%;
-	width: 100%;
-	z-index: 1;
+.collection2__product-front-image {
 	opacity: 1;
-	visibility: visible;
-	transition: all .3s ease-in-out
+	visibility: visible
 }
 
-.collection2__product-front-img--cover {
-	object-fit: cover
-}
-
-.collection2__product-front-img--contain {
-	object-fit: contain
-}
-
-.collection2__product-back-img {
+.collection2__product-back-image,
+.collection2__product-front-image {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -2078,17 +2081,12 @@ table {
 	height: 100%;
 	width: 100%;
 	z-index: 1;
-	opacity: 0;
-	visibility: hidden;
 	transition: all .3s ease-in-out
 }
 
-.collection2__product-back-img--cover {
-	object-fit: cover
-}
-
-.collection2__product-back-img--contain {
-	object-fit: contain
+.collection2__product-back-image {
+	opacity: 0;
+	visibility: hidden
 }
 
 .collection2__product-info {

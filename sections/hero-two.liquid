@@ -27,7 +27,9 @@
           widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
       }}
     {%- elsif section.settings.image == blank -%}
-      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    <div class="hero2__collections1">
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'hero2__bg' }}
+    </div>
     {%- endif -%}
     {% assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.00 %}
     <div class="hero2__content-container" style="background-color: {{ section.settings.background | color_modify: 'alpha', overlay_opacity }}">
@@ -81,7 +83,9 @@
             widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
         }}
       {%- elsif section.settings.image_2 == blank -%}
-        {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        <div class="hero2__collections2">
+          {{ 'lifestyle-2' | placeholder_svg_tag: 'hero2__bg' }}
+        </div>
       {%- endif -%}
   {% assign overlay_opacity_2 = section.settings.overlay_opacity_2 | divided_by: 100.00 %}
     <div class="hero2__content-container" style="background-color: {{ section.settings.background_2 | color_modify: 'alpha', overlay_opacity_2 }}">

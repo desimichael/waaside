@@ -27,8 +27,8 @@
           widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
       }}
   {%- elsif section.settings.image == blank -%}
-    <div>
-      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    <div class="hero1">
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'hero1__bg' }}
     </div>
   {%- endif -%}
   {% assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.00 %}
