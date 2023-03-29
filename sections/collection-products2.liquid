@@ -3,7 +3,6 @@
   <div class="container">
     <div class="row">
       {% for product in section.settings.collection.products limit: section.settings.total_products %}
-      {% assign product_colors = "white, black, red" | split: ", " %}
       <div class="{{ section.settings.xxl_col }} {{ section.settings.xl_col }} {{ section.settings.lg_col }} {{ section.settings.md_col }} {{ section.settings.sm_col }}">
         <div class="collection2__product-item">
           {% assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.00 %}
@@ -79,13 +78,6 @@
                     {{ product.price | money }}
                 </div>
               {% endif %}
-              <ul class="collection2__colors">
-                {% for product_color in product_colors %}
-                  <li
-                    class="collection2__color collection2__color--{{ product_color | uniq }}">
-                  </li>
-                {% endfor %}
-              </ul>
             </div>
           </div>
         </div>
@@ -121,17 +113,6 @@
               <div
                 class="collection2__product-price">
                 $50.00</div>
-              <ul class="collection2__colors">
-                <li
-                  class="collection2__color collection2__color--red">
-                </li>
-                <li
-                  class="collection2__color collection2__color--green">
-                </li>
-                <li
-                  class="collection2__color collection2__color--blue">
-                </li>
-              </ul>
             </div>
           </div>
         </div>
