@@ -68,7 +68,6 @@
                 {%- endfor -%}
               </ul>
             {%- endif -%}      
-
           </div>
         </div>
         <div class="col-md-4 col-sm-12">
@@ -78,6 +77,7 @@
                 {{ section.settings.newsletter_heading }}
               </span>
               {%- form 'customer', class: 'footer1__form-group' -%}
+                <input type="hidden" name="contact[tags]" value="newsletter">
                 <div class="footer1__input-wrapper">
                     <input
                       type="email"
@@ -108,7 +108,7 @@
                   {%- endif -%}
                 </div>
                 {%- if form.posted_successfully? -%}
-                  <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="ContactFooter-success" tabindex="-1" autofocus>{{ 'newsletter.success' | t }}</h3>
+                  <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="ContactFooter-success" style="font-size: .9rem; font-weight: 900; color: green;" tabindex="-1" autofocus>{{ 'newsletter.success' | t }}</h3>
                 {%- endif -%}
               {%- endform -%}
             {% endif %}
@@ -117,19 +117,55 @@
               </p>
             {% if section.settings.show_social != false %}
             <div class="footer1__social-icons">
-              <h5 class="footer1__social-icons-title">
-                follow us
-              </h5>
+                <h5 class="footer1__social-icons-title">
+                  {{ section.settings.social_heading }}
+                </h5>
               <div class="footer1__social-icons-wrapper">
-                <a href="#" class="footer1__social-link">
-                  <i class="fab fa-facebook"></i>
-                </a>
-                <a href="#" class="footer1__social-link">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="footer1__social-link">
-                  <i class="fab fa-pinterest-square"></i>
-                </a>
+                {%- if settings.social_facebook_link != blank -%}
+                  <a href="{{ settings.social_facebook_link }}" class="footer1__social-link">
+                    <i class="fab fa-facebook"></i>
+                  </a>
+                {%- endif -%}
+                {%- if settings.social_instagram_link != blank -%}
+                  <a href="{{ settings.social_instagram_link }}" class="footer1__social-link">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                {%- endif -%}
+                {%- if settings.social_twitter_link != blank -%}
+                  <a href="{{ settings.social_twitter_link }}" class="footer1__social-link">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                {%- endif -%}
+                {%- if settings.social_snapchat_link != blank -%}
+                  <a href="{{ settings.social_snapchat_link }}" class="footer1__social-link">
+                    <i class="fab fa-snapchat-ghost"></i>
+                  </a>
+                {%- endif -%}
+                {%- if settings.social_pinterest_link != blank -%}
+                  <a href="{{ settings.social_pinterest_link }}" class="footer1__social-link">
+                    <i class="fab fa-pinterest-square"></i>
+                  </a>
+                {%- endif -%}
+                {%- if settings.social_tiktok_link != blank -%}
+                  <a href="{{ settings.social_tiktok_link }}" class="footer1__social-link">
+                    <i class="fab fa-tiktok"></i>
+                  </a>
+                {%- endif -%}
+                {%- if settings.social_youtube_link != blank -%}
+                  <a href="{{ settings.social_youtube_link }}" class="footer1__social-link">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                {%- endif -%}
+                {%- if settings.social_vimeo_link != blank -%}
+                  <a href="{{ settings.social_vimeo_link }}" class="footer1__social-link">
+                    <i class="fab fa-vimeo-v"></i>
+                  </a>
+                {%- endif -%}
+                {%- if settings.social_tumblr_link != blank -%}
+                  <a href="{{ settings.social_tumblr_link }}" class="footer1__social-link">
+                    <i class="fab fa-tumblr"></i>
+                  </a>
+                {%- endif -%}
               </div>
             </div>
             {% endif %}
@@ -502,6 +538,12 @@
       "id": "show_social",
       "default": true,
       "label": "t:sections.footer.settings.show_social.label"
+    },
+    {
+      "type": "text",
+      "id": "social_heading",
+      "default": "Follow us",
+      "label": "Social media heading"
     },
     {
       "type": "link_list",
