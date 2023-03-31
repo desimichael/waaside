@@ -6,14 +6,14 @@
       <div class="{{ section.settings.xxl_col }} {{ section.settings.xl_col }} {{ section.settings.lg_col }} {{ section.settings.md_col }} {{ section.settings.sm_col }}">
         <div class="collection2__product-item">
           {% assign overlay_opacity = section.settings.overlay_opacity | divided_by: 100.00 %}
-          <div class="collection2__product-image collection2__product-image--{{ section.settings.image_fit }}">
+          <div class="collection2__product-image collection2__product-image--{{ section.settings.image_fit }}" style="background-color: {{ section.settings.background | color_modify: 'alpha', overlay_opacity }}">
             <div class="collection2__like"><i
                 class="far fa-heart"></i></div>
             <div class="collection2__new-item"><span
                 class="collection2__new-item-text">new</span>
             </div>
             {% if product.images[0] != blank %}
-              <a href="{{ product.url }}" class="collection2__product-image-link"  style="background-color: {{ section.settings.background | color_modify: 'alpha', overlay_opacity }}">
+              <a href="{{ product.url }}" class="collection2__product-image-link">
                 {%- liquid 
                 assign image_height = product.images[0].width | divided_by: product.images[0].aspect_ratio
                   if product.images[0] != blank

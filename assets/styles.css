@@ -1860,7 +1860,7 @@ table {
 	}
 }
 
-@media(max-width:1199px) {
+@media(max-width:1200px) {
 	.col-lg-3 .collection1__product-image .collection1__image-link--circle {
 		height: 200px;
 		width: 200px
@@ -3767,48 +3767,52 @@ table {
 }
 
 .footer1__newsletter-desc {
-	font-size: .7rem;
+	font-size: .9rem;
 	color: #474644
 }
 
 .footer1__form-group {
+	position: relative;
 	width: 100%;
 	margin-bottom: 1rem
 }
 
-.footer1__input {
-	font-size: .9rem;
+.footer1__input-wrapper {
 	color: #100c08;
-	width: 70%;
-	padding: 7px;
-	margin-right: .5rem;
-	margin-bottom: .5rem
-}
-
-.footer1__btn,
-.footer1__input {
-	font-weight: 300;
-	border: 1px solid #000
+	border: 1px solid #000;
+	width: 280px;
+	position: relative
 }
 
 .footer1__btn {
-	background: #000;
-	color: #fff;
-	font-size: .8rem;
-	padding: 9px 15px;
+	position: absolute;
+	right: 0;
+	background: #fff;
+	border: 1px solid #fff;
+	color: #000;
+	height: 100%;
+	line-height: 1;
+	width: 28px;
+	margin: 0;
+	font-size: .9rem;
 	text-transform: uppercase;
 	transition: all .2s ease-in-out
 }
 
 .footer1__btn:hover {
-	background: #fff;
-	color: #000
+	background: #000;
+	border: 1px solid #000;
+	color: #fff
+}
+
+.footer1__input {
+	width: 100%;
+	padding-left: 10px;
+	border: 1px solid #fff
 }
 
 .footer1__input::placeholder {
-	text-transform: capitalize;
-	font-size: .8rem;
-	font-weight: 300
+	font-size: .9rem
 }
 
 .footer1__social-icons-title {
@@ -3845,23 +3849,56 @@ table {
 .footer1__bottom {
 	display: flex;
 	align-items: center;
-	justify-content: space-between
+	justify-content: space-between;
+	padding: 10px 0
 }
 
 .footer1__copyright {
-	text-transform: uppercase
-}
-
-.footer1__bottom-info,
-.footer1__copyright {
-	font-size: .7rem;
+	font-size: .8rem;
+	text-transform: uppercase;
 	color: #100c08;
 	line-height: 1;
 	font-weight: 300
 }
 
-.footer1__bottom-info {
-	text-transform: capitalize
+.footer1__bottom-links {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start
+}
+
+.footer1__bottom-links a {
+	font-size: .8rem;
+	text-transform: uppercase;
+	color: #100c08;
+	line-height: 1;
+	font-weight: 300;
+	text-decoration: none;
+	margin-right: 15px;
+	transition: all .2s ease-in-out
+}
+
+.footer1__bottom-links a:hover {
+	color: #100c08
+}
+
+@media(max-width:767px) {
+
+	.footer1__left-wrapper,
+	.footer1__right-wrapper {
+		padding: 25px 0
+	}
+}
+
+@media(max-width:576px) {
+	.footer1__bottom {
+		flex-direction: column;
+		align-items: flex-start
+	}
+
+	.footer1__copyright {
+		margin-bottom: 1rem
+	}
 }
 
 h1 {
