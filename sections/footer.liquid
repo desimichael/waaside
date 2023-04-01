@@ -112,9 +112,11 @@
                 {%- endif -%}
               {%- endform -%}
             {% endif %}
+            {% if section.settings.show_footer_info != blank %}
               <p class="footer1__newsletter-desc">
                 {{ section.settings.footer_info }}
               </p>
+            {% endif %} 
             {% if section.settings.show_social != false %}
             <div class="footer1__social-icons">
                 <h5 class="footer1__social-icons-title">
@@ -292,6 +294,12 @@
       "id": "newsletter_heading",
       "default": "Subscribe to our emails",
       "label": "t:sections.footer.settings.newsletter_heading.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_footer_info",
+      "default": true,
+      "label": "Show more information"
     },
     {
       "type": "textarea",

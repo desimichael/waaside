@@ -249,8 +249,8 @@
     }
   },
   "order": [
-    "032eaaf2-2289-4d6c-8993-33f215bf1bb7",
     "image_banner",
+    "032eaaf2-2289-4d6c-8993-33f215bf1bb7",
     "rich_text",
     "featured_collection",
     "collage",
