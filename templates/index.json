@@ -1,44 +1,5 @@
 {
   "sections": {
-    "032eaaf2-2289-4d6c-8993-33f215bf1bb7": {
-      "type": "hero-two",
-      "blocks": {
-        "template--18037262811414__032eaaf2-2289-4d6c-8993-33f215bf1bb7-1678113900017b1126-0": {
-          "type": "heading",
-          "settings": {
-            "title": "New Arrivals",
-            "title_2": "Featured",
-            "title_size": "md"
-          }
-        },
-        "template--18037262811414__032eaaf2-2289-4d6c-8993-33f215bf1bb7-1678113900017b1126-1": {
-          "type": "buttons",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "template--18037262811414__032eaaf2-2289-4d6c-8993-33f215bf1bb7-1678113900017b1126-0",
-        "template--18037262811414__032eaaf2-2289-4d6c-8993-33f215bf1bb7-1678113900017b1126-1"
-      ],
-      "settings": {
-        "hero_height": "100",
-        "image": "shopify:\/\/shop_images\/womens-fashion-woman-denim-shorts-holding-pockets.jpg",
-        "info_alignment": "center",
-        "background": "#000000",
-        "overlay_opacity": 20,
-        "image_2": "shopify:\/\/shop_images\/mens-business-fashion.jpg",
-        "info_alignment_2": "center",
-        "background_2": "#000000",
-        "overlay_opacity_2": 20
-      }
-    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -203,7 +164,6 @@
     }
   },
   "order": [
-    "032eaaf2-2289-4d6c-8993-33f215bf1bb7",
     "rich_text",
     "featured_collection",
     "collage",
