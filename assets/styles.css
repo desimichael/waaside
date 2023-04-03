@@ -1105,6 +1105,10 @@ table {
 	height: 50vh
 }
 
+.hero1--vh50 .hero1__paragraph {
+	line-height: 1.2
+}
+
 .hero1--vh75 {
 	height: 75vh
 }
@@ -1260,7 +1264,8 @@ table {
 	color: #fec89a;
 	font-size: 3.5rem;
 	letter-spacing: 1px;
-	padding-bottom: 1rem
+	padding-bottom: .5rem;
+	margin: 0
 }
 
 .hero1__title--sm {
@@ -1273,7 +1278,8 @@ table {
 	color: #fec89a;
 	line-height: 1;
 	letter-spacing: 1px;
-	padding-bottom: 1rem
+	padding-bottom: .5rem;
+	margin: 0
 }
 
 .hero1__title--md {
@@ -1290,7 +1296,8 @@ table {
 	color: #fec89a;
 	line-height: 1;
 	letter-spacing: 1px;
-	padding-bottom: 1rem
+	padding-bottom: .5rem;
+	margin: 0
 }
 
 .hero1__title--xl {
@@ -1301,7 +1308,7 @@ table {
 	font-weight: 300;
 	font-size: 1.2rem;
 	color: #f8f8ff;
-	line-height: 2;
+	line-height: 1.2;
 	max-width: 60%;
 	margin: 0;
 	padding-bottom: 1.5rem
