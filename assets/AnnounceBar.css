@@ -1,0 +1,19 @@
+.announce-bar {
+  padding: 15px;
+  background: #001219;
+}
+.announce-bar__link {
+  display: flex;
+  justify-content: center;
+  text-decoration: none
+}
+.announce-bar__text {
+  color: #f8f8ff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all .2s ease-in-out
+}
+
+.announce-bar__text:hover {
+  color: #f8f8ff
+}

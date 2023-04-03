@@ -1069,14 +1069,6 @@ table {
 	justify-content: center
 }
 
-.announce-bar__link {
-	text-decoration: none
-}
-
-.announce-bar__message {
-	margin: 0
-}
-
 .announce-bar__text {
 	color: #f8f8ff;
 	font-size: 1.5rem;
@@ -11008,19 +11000,6 @@ body {
 .fixed-nav.fixed-nav--transparent .header3__user-link-icon:hover,
 .fixed-nav.fixed-nav--transparent .header__user-link-icon:hover {
 	color: #ffb5a7
-}
-
-.fixed-nav.fixed-nav--transparent .hero1,
-.fixed-nav.fixed-nav--transparent .hero2,
-.fixed-nav.fixed-nav--transparent .hero3 {
-	height: 100vh
-}
-
-.fixed-nav.fixed-nav--transparent .hero1__info,
-.fixed-nav.fixed-nav--transparent .hero2__info,
-.fixed-nav.fixed-nav--transparent .hero3__info {
-	padding: 150px 0 25px 25px;
-	z-index: 25
 }
 
 .fixed-nav .header {
