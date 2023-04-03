@@ -8,14 +8,14 @@
           "settings": {
             "title": "Title",
             "title_size": "xl",
-            "title_color": "#FEC89A"
+            "title_color": "#fec89a"
           }
         },
         "template--17974726787350__768d908e-1c62-4f30-b944-69a0b550e988-168048937732945c07-1": {
           "type": "paragraph",
           "settings": {
             "paragraph": "It shines, glitters, reflects light.",
-            "paragraph_color": "#FFFFFF"
+            "paragraph_color": "#ffffff"
           }
         },
         "template--17974726787350__768d908e-1c62-4f30-b944-69a0b550e988-168048937732945c07-2": {
@@ -132,14 +132,14 @@
           "settings": {
             "title": "Title",
             "title_size": "lg",
-            "title_color": "#FEC89A"
+            "title_color": "#fec89a"
           }
         },
         "template--17974726787350__970ecabc-2c8c-4dea-998e-7daeb1f5e3c0-168048937732945c07-1": {
           "type": "paragraph",
           "settings": {
             "paragraph": "It shines, glitters, reflects light.",
-            "paragraph_color": "#FFFFFF"
+            "paragraph_color": "#ffffff"
           }
         },
         "template--17974726787350__970ecabc-2c8c-4dea-998e-7daeb1f5e3c0-168048937732945c07-2": {
@@ -158,7 +158,8 @@
       ],
       "settings": {
         "hero_height": "50",
-        "info_alignment": "center-center",
+        "image": "shopify:\/\/shop_images\/christmas-tree-shopping.jpg",
+        "info_alignment": "left-center",
         "background": "#000000",
         "overlay_opacity": 50
       }
