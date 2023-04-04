@@ -34,8 +34,15 @@
     ]
   },
   {
-    "name": "t:settings_schema.colors.name",
+    "name": "Global Colors",
     "settings": [
+      {
+        "type": "color",
+        "id": "body_bg",
+        "default": "#F5F3F4",
+        "label": "Body Background",
+        "info": "The background color for the whole website"
+      },
       {
         "type": "header",
         "content": "t:settings_schema.colors.settings.header__1.content"

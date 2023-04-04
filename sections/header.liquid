@@ -1,5 +1,6 @@
 {% case section.settings.header_type %}
 {% when 'header1' %}
+  {{ 'Header1.css' | asset_url | stylesheet_tag }}
 <!-- Header 1 Start -->
 <header class="header header1">
   <!-- header 1 logo start -->
@@ -152,6 +153,7 @@
 <!-- Header 1 End -->
 
 {% when 'header2' %}
+  {{ 'Header2.css' | asset_url | stylesheet_tag }}
 <!-- Header 2 Start -->
 <header class="header header2 ">
   <!-- Left Nav Start -->
@@ -329,6 +331,7 @@
 <!-- Header 2 End -->
 
 {% when 'header3' %}
+  {{ 'Header3.css' | asset_url | stylesheet_tag }}
 <!-- Header 3 Start -->
 <header class="header header3">
   <div class="header3__logo">
