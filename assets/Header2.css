@@ -146,7 +146,7 @@
   color: #cc553e
 }
 
-@media(max-width: 991px) {
+@media(max-width: 992px) {
   .header2 {
     position: relative
   }
@@ -212,7 +212,7 @@
     left: 0;
     background: snow;
     height: 100vh;
-    width: 50vw;
+    max-width: 70%;
     padding: 10px 20px;
     z-index: 25
   }
@@ -241,6 +241,28 @@
   }
 
   .header2__mobile-close:hover {
+    color: #cc553e
+  }
+
+  .header2__mobile-link {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    z-index: 25;
+    transition: all .2s ease-in-out
+  }
+
+  .header2__mobile-link a {
+    font-size: .9rem;
+    font-weight: 300;
+    color: #100c08;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase
+  }
+
+  .header2__mobile-link a:hover {
     color: #cc553e
   }
 
