@@ -4,21 +4,6 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
-      "blocks": {
-        "40b11070-70f1-48ba-8b7b-2ef3e1649a85": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "background": "linear-gradient(#ffffff, #000000)",
-            "body_text": "#f8f8ff",
-            "text_alignment": "center",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "40b11070-70f1-48ba-8b7b-2ef3e1649a85"
-      ],
       "custom_css": [
 
       ],
@@ -28,7 +13,7 @@
     "header": {
       "type": "header",
       "settings": {
-        "header_type": "header1",
+        "header_type": "header2",
         "logo_width": 100,
         "menu": "main-menu",
         "menu_two": "main-menu-2",
