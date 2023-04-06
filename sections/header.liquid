@@ -111,7 +111,7 @@
     <div class="header1__mobile-nav-left">
       <ul class="header1__mobile-nav-content">
         <li class="header1__mobile-nav-header">
-          <div class="header3__mobile-close">
+          <div class="header1__mobile-close">
             <i class="fa-solid fa-xmark"></i>
           </div>
         </li>
@@ -365,12 +365,12 @@
     {% for link in section.settings.menu.links %}
     {%- if link.links == blank -%}
     <li class="header3__collection-link">
-      <a href="{{ link.url }}" class="header1__link">
+      <a href="{{ link.url }}" class="header3__link">
         {{- link.title | escape -}}
       </a>
     </li>
     {% else %}
-    <li class="header3__collection-link header1__collection-link--dropdown">
+    <li class="header3__collection-link header3__collection-link--dropdown">
       <a href="{{ link.url }}" class="header3__link">
         {{- link.title | escape -}}
         <i class="fa-solid fa-chevron-down"></i>
@@ -395,7 +395,7 @@
     <li class="header3__user-link">
       {%- if shop.customer_accounts_enabled -%}
       <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
-        class="header2__user-link-icon">
+        class="header3__user-link-icon">
         <i class="fa-solid fa-user"></i>
       </a>
       {% endif %}
@@ -443,7 +443,7 @@
         {% for link in section.settings.menu.links %}
         {%- if link.links == blank -%}
           <li class="header3__mobile-link">
-            <a href="{{ link.url }}" class="header1__link">
+            <a href="{{ link.url }}" class="header3__link">
               {{- link.title | escape -}}
             </a>
           </li>
@@ -483,7 +483,7 @@
 <!-- Header 3 Start -->
 
 {% else %}
-<h1>header 2</h1>
+{{ 'Header2.css' | asset_url | stylesheet_tag }}
 {% endcase %}
 
 {% schema %}
