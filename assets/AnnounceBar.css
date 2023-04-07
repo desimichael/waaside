@@ -1,12 +1,18 @@
 .announce-bar {
   padding: 15px;
-  background: #001219;
   display: flex;
   justify-content: center;
+  align-items: center;
+  background: #001219
 }
+
 .announce-bar__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none
 }
+
 .announce-bar__text {
   color: #f8f8ff;
   font-size: 1.5rem;
