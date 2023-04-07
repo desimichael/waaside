@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Dawn",
+    "theme_name": "Waaside",
     "theme_version": "8.0.0",
-    "theme_author": "Shopify",
-    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
-    "theme_support_url": "https:\/\/support.shopify.com\/"
+    "theme_author": "Desi S.",
+    "theme_documentation_url": "https://waaside.com/theme/docs",
+    "theme_support_url": "https://waaside.com/theme/support"
   },
   {
     "name": "t:settings_schema.logo.name",
