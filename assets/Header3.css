@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f8f8ff;
+  background: var(--header-bg);
   color: #100c08;
   transition: all .2s ease-in-out
 }
@@ -85,7 +85,7 @@
 
 .header3 .collection-sublinks {
   position: absolute;
-  background: #f8f8ff;
+  background: var(--header-bg);
   opacity: 0;
   visibility: hidden;
   padding: 10px;
@@ -202,7 +202,7 @@
     position: relative;
     top: 0;
     left: 0;
-    background: snow;
+    background: var(--header-bg);
     height: 100vh;
     max-width: 70%;
     padding: 10px 20px;

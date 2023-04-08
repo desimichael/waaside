@@ -8,6 +8,34 @@
     "theme_support_url": "https://waaside.com/theme/support"
   },
   {
+    "name": "Header Settings",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Global Styles"
+      },
+      {
+        "type": "color",
+        "id": "header_bg",
+        "label": "Header background color",
+        "default": "#f8f8ff"
+      },
+      {
+        "type": "checkbox",
+        "id": "header_sticky",
+        "label": "Sticky Header",
+        "info": "Keeps the header to the top",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "header_transparent",
+        "label": "Transparent Header",
+        "default": true
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.logo.name",
     "settings": [
       {

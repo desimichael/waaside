@@ -486,6 +486,27 @@
 {{ 'Header2.css' | asset_url | stylesheet_tag }}
 {% endcase %}
 
+<script>
+  console.log('loaded JS from header');
+  // get body element
+  const bodyTag = document.getElementsByTagName('body')[0];
+  // check for class fixed-nav
+  if (bodyTag.classList.contains('fixed-nav') && bodyTag.classList.contains('transparent-nav')) {
+    // removed transparent bg when scrolled
+    const onScroll = () => {
+      const scrollLocation = document.documentElement.scrollTop;
+
+      if (scrollLocation > 90) {
+        bodyTag.classList.remove('transparent-nav')
+      } else {
+        bodyTag.classList.add('transparent-nav')
+      }
+    }
+    window.addEventListener('scroll', onScroll)
+  }
+  // if fixed nav class exists, remove transparent-nav class on scroll
+</script>
+
 {% schema %}
 {
   "name": "t:sections.header.name",
