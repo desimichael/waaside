@@ -1,7 +1,7 @@
 .header1 {
   font-family: "Lato" sans-serif;
   height: 90px;
-  padding: 0 25px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -74,7 +74,7 @@
 
 .header1__collection-link {
   display: block;
-  padding: 5px 7px;
+  padding: 0px 10px;
   transition: .2s ease-in-out
 }
 
@@ -84,7 +84,7 @@
   display: block;
   letter-spacing: 1px;
   font-weight: 400;
-  font-size: .8rem;
+  font-size: 1rem;
   text-decoration: none
 }
 
@@ -131,8 +131,36 @@
 
 .header1__user-link {
   display: block;
-  padding: 5px 15px;
+  padding-left: 10px;
   transition: .2s ease-in-out
+}
+
+.header__icon--account {
+  height: 2rem;
+  width: 1.3rem;
+  color: #100c08;
+  padding-bottom: 5px;
+  transition: all .2s ease-in-out;
+}
+
+.header__icon:hover .icon,
+.modal__close-button:hover .icon {
+  color: #cc553e;
+}
+
+.header__icon--cart {
+  height: 2.3rem;
+  width: 2.3rem;
+  color: #100c08;
+  transition: all .2s ease-in-out;
+}
+
+.header__icon .cart-count-bubble {
+  color: #f8f8ff;
+  background: #000000;
+  border: 1px solid #f8f8ff;
+  bottom: 1rem;
+  left: 1.2rem;
 }
 
 .header1__user-link-icon {
