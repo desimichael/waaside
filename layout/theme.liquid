@@ -265,24 +265,70 @@
     color: #ffb5a7
   }
 
-  .fixed-nav.transparent-nav .header .header__icon--account,
-  .fixed-nav.transparent-nav .header .header__icon--cart {
-    color: #f8f8ff
+  .fixed-nav.transparent-nav .header .header1__user-link-icon,
+  .fixed-nav.transparent-nav .header .header2__user-link-icon,
+  .fixed-nav.transparent-nav .header .header3__user-link-icon {
+    color: #f8f8ff;
+    display: block;
+    font-weight: 400;
+    font-size: .8rem;
+    text-decoration: none
   }
-  
-  .fixed-nav.transparent-nav .header .header__icon .cart-count-bubble {
-  color: #000000;
-  background: #f8f8ff;
-  border: 1px solid #000000;
-  bottom: 1rem;
-  left: 1.2rem;
-}
+
+  .fixed-nav.transparent-nav .header .header1__user-link-icon:hover,
+  .fixed-nav.transparent-nav .header .header2__user-link-icon:hover,
+  .fixed-nav.transparent-nav .header .header3__user-link-icon:hover {
+    color: #ffb5a7
+  }
 
   .fixed-nav .header {
     position: fixed;
     width: 100%;
     transition: all .2s ease-in-out;
     z-index: 20
+  }
+
+  .transparent-nav .header {
+    background: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20
+  }
+
+  .transparent-nav .header .header1__logo a,
+  .transparent-nav .header .header2__logo a,
+  .transparent-nav .header .header3__logo a {
+    color: #f8f8ff
+  }
+
+  .transparent-nav .header .header1__link,
+  .transparent-nav .header .header2__link,
+  .transparent-nav .header .header3__link {
+    color: #f8f8ff
+  }
+
+  .transparent-nav .header .header1__link:hover,
+  .transparent-nav .header .header2__link:hover,
+  .transparent-nav .header .header3__link:hover {
+    color: #ffb5a7
+  }
+
+  .transparent-nav .header .header1__user-link-icon,
+  .transparent-nav .header .header2__user-link-icon,
+  .transparent-nav .header .header3__user-link-icon {
+    color: #f8f8ff;
+    display: block;
+    font-weight: 400;
+    font-size: .8rem;
+    text-decoration: none
+  }
+
+  .transparent-nav .header .header1__user-link-icon:hover,
+  .transparent-nav .header .header2__user-link-icon:hover,
+  .transparent-nav .header .header3__user-link-icon:hover {
+    color: #ffb5a7
   }
 
   @media(max-width: 992px) {
