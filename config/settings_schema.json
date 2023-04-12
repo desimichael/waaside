@@ -24,8 +24,8 @@
         "type": "checkbox",
         "id": "header_sticky",
         "label": "Sticky Header",
-        "info": "Keeps the header to the top",
-        "default": false
+        "info": "Header follows on scroll",
+        "default": true
       },
       {
         "type": "checkbox",

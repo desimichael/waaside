@@ -242,7 +242,15 @@
   body {
     background: var(--body-bg)
   }
+  .fixed-nav .header {
+    position: fixed;
+    width: 100%;
+    transition: all .2s ease-in-out;
+    z-index: 20
+  }
+
   .fixed-nav.transparent-nav .header {
+    position: fixed;
     background: rgba(0, 0, 0, 0)
   }
 
@@ -280,13 +288,6 @@
     color: #ffb5a7
   }
 
-  .fixed-nav .header {
-    position: fixed;
-    width: 100%;
-    transition: all .2s ease-in-out;
-    z-index: 20
-  }
-
   .transparent-nav .header {
     background: rgba(0, 0, 0, 0);
     position: absolute;
@@ -314,18 +315,14 @@
     color: #ffb5a7
   }
 
-  .transparent-nav .header .header1__user-link a,
-  .transparent-nav .header .header2__user-link a,
-  .transparent-nav .header .header3__user-link a {
+  .transparent-nav .header .header1__user-link-icon,
+  .transparent-nav .header .header2__user-link-icon,
+  .transparent-nav .header .header3__user-link-icon {
     color: #f8f8ff;
-  }
-
-  .transparent-nav .header .header__icon .cart-count-bubble {
-    color: #000000;
-    background: #f8f8ff;
-    border: .5px solid #000000;
-    bottom: 1rem;
-    left: 1.2rem;
+    display: block;
+    font-weight: 400;
+    font-size: .8rem;
+    text-decoration: none
   }
 
   .transparent-nav .header .header1__user-link-icon:hover,
@@ -335,9 +332,6 @@
   }
 
   @media(max-width: 992px) {
-    .fixed-nav.transparent-nav .header {
-      background: rgba(0, 0, 0, 0)
-    }
 
     .fixed-nav.transparent-nav .header .header1__logo a,
     .fixed-nav.transparent-nav .header .header2__logo a,
@@ -371,17 +365,6 @@
     .fixed-nav.transparent-nav .header .header2__mobile-link a:hover,
     .fixed-nav.transparent-nav .header .header3__mobile-link a:hover {
       color: #cc553e
-    }
-
-    .fixed-nav .header {
-      position: fixed;
-      width: 100%;
-      transition: all .2s ease-in-out;
-      z-index: 20
-    }
-
-    .transparent-nav .header {
-      background: rgba(0, 0, 0, 0)
     }
 
     .transparent-nav .header .header1__logo a,
