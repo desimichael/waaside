@@ -242,7 +242,6 @@
   body {
     background: var(--body-bg)
   }
-
   .fixed-nav.transparent-nav .header {
     background: rgba(0, 0, 0, 0)
   }
@@ -315,14 +314,18 @@
     color: #ffb5a7
   }
 
-  .transparent-nav .header .header1__user-link-icon,
-  .transparent-nav .header .header2__user-link-icon,
-  .transparent-nav .header .header3__user-link-icon {
+  .transparent-nav .header .header1__user-link a,
+  .transparent-nav .header .header2__user-link a,
+  .transparent-nav .header .header3__user-link a {
     color: #f8f8ff;
-    display: block;
-    font-weight: 400;
-    font-size: .8rem;
-    text-decoration: none
+  }
+
+  .transparent-nav .header .header__icon .cart-count-bubble {
+    color: #000000;
+    background: #f8f8ff;
+    border: .5px solid #000000;
+    bottom: 1rem;
+    left: 1.2rem;
   }
 
   .transparent-nav .header .header1__user-link-icon:hover,
@@ -375,6 +378,44 @@
       width: 100%;
       transition: all .2s ease-in-out;
       z-index: 20
+    }
+
+    .transparent-nav .header {
+      background: rgba(0, 0, 0, 0)
+    }
+
+    .transparent-nav .header .header1__logo a,
+    .transparent-nav .header .header2__logo a,
+    .transparent-nav .header .header3__logo a {
+      display: none
+    }
+
+    .transparent-nav .header .header1__mobile-logo,
+    .transparent-nav .header .header2__mobile-logo,
+    .transparent-nav .header .header3__mobile-logo {
+      color: #f8f8ff
+    }
+
+    .transparent-nav .header .header1__mobile-open,
+    .transparent-nav .header .header2__mobile-open,
+    .transparent-nav .header .header3__mobile-open {
+      color: #f8f8ff
+    }
+
+    .transparent-nav .header .header1__mobile-nav-left {
+      display: none
+    }
+
+    .transparent-nav .header .header1__mobile-link a,
+    .transparent-nav .header .header2__mobile-link a,
+    .transparent-nav .header .header3__mobile-link a {
+      color: #100c08
+    }
+
+    .transparent-nav .header .header1__mobile-link a:hover,
+    .transparent-nav .header .header2__mobile-link a:hover,
+    .transparent-nav .header .header3__mobile-link a:hover {
+      color: #cc553e
     }
   }
   {% endstyle %}
